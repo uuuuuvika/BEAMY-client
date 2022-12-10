@@ -1,7 +1,8 @@
+import "./ListOfAllCardsForSpecificDeck.css"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "./ListOfAllCardsForSpecificDeck.css"
 import AddCardButton from "../AddCardButton/AddCardButton";
+import EditDeckButton from "../../Decks/EdditDeckButton/EditDeckButton";
 import axios from "axios";
 import jwtDecode from 'jwt-decode';
 
@@ -25,7 +26,7 @@ function ListAllCardsForSpecificDeck() {
         user = jwtDecode(token);
     }
 
-    const getData = () => {
+    function getData() {
         //console.log(deckId);
         axios
             .get(`${API_URL}/decks/${deckId}`)
@@ -47,6 +48,8 @@ function ListAllCardsForSpecificDeck() {
 
     return (
         <div className="deckPage">
+            {/* <input type={"text"} value={name} /> */}
+            {/* <input type={"text"} value={description} /> */}
             <h1>{name}</h1>
             <h3>{description}</h3>
             {allCards.map((card) => (
@@ -57,6 +60,7 @@ function ListAllCardsForSpecificDeck() {
                 </div>
             ))} totall {allCardsLength} cards
         {user && user._id === createdBy ? <AddCardButton getData={getData} deckId={deckId} /> : null}
+        {user && user._id === createdBy ? <EditDeckButton name={name} description={description} deckId={deckId} /> : null}
         </div>
     )
 }

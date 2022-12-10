@@ -1,32 +1,30 @@
 import { useState } from "react";
 import axios from "axios";
-//import { useParams } from "react-router-dom";
+import  authTokenHeader from "../../../token";
+
 const API_URL = "http://localhost:5005";
 
-function authTokenHeader() {
-    const storedToken = localStorage.getItem("authToken");
-    return { Authorization: `Bearer ${storedToken}` }
-}
 
 function AddCardButton({ getData, deckId }) {
-    //send ID in the router
-    //const {deckId} = useParams;
+
     const [show, setShow] = useState(false);
     const [question, setQuesion] = useState("");
     const [answer, setAnswer] = useState("");
 
-    const handleSubmit = (event) => {
+    function handleSubmit(event) {
+
         event.preventDefault();
         const body = { question, answer };
+        
         axios
             .post(`${API_URL}/decks/${deckId}/card`, body, { headers: authTokenHeader() })
             .then((response) => {
+                //what do i do with response here?
                 setQuesion("");
                 setAnswer("");
                 getData();
             });
     }
-
 
     return (
         <div>
@@ -50,5 +48,3 @@ function AddCardButton({ getData, deckId }) {
 }
 
 export default AddCardButton;
-
-

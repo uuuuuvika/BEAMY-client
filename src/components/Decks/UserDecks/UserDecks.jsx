@@ -1,8 +1,7 @@
-import React from 'react';
+// import React from 'react';
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
-
 
 // make search and sort too
 function UserDecks({getData, userDecks}) {
@@ -21,7 +20,7 @@ function UserDecks({getData, userDecks}) {
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}>
                         <Link to={`/decks/${deck._id}`}>
                             <h1>{deck.name}</h1>
-                            {/* <p>{deck.description}</p> */}
+                            {/* <p>{deck.description}</p> maybe i can make it appear ON HOVER, mmm?*/}
                         </Link>
                     </motion.div>
                 </div>
