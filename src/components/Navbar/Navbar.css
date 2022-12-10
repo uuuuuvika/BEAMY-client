@@ -1,0 +1,33 @@
+* {
+    text-decoration: none;
+}
+.button {
+    height: fit-content;
+    display: flex;
+    align-self: center;
+    --clay-border-radius: 8px;
+}
+a {
+    color: rgb(98, 84, 100);
+    font-weight: 900;
+}
+.navBar {
+    margin-top: 3mm;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    /* background: linear-gradient(to right, #ffffff 0%, #e5dfed 70%);
+    padding: 1.5%; */
+    
+}
+.navLeft {
+    display: flex;
+    justify-content: space-between;
+    gap: 3mm;
+    margin-left: 10%;
+    margin-right: 10%;
+    align-self: center;
+    /* border-radius: 18px; */
+}
