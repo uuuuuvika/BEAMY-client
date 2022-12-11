@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import SignupPage from "./pages/SignupPage/SignupPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import StudyPage from "./pages/StudyPage/StydyPage";
 
 import Navbar from "./components/Navbar/Navbar";
 import IsPrivate from "./components/Auth/IsPrivate/IsPrivate";
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/decks" element={<Decks />} />
         <Route path="/decks/:deckId" element={<ListAllCardsForSpecificDeck />} />
+        <Route path="/decks/:deckId/cards" element={<StudyPage />} />
         {/* <Route path="/decks/:deckId/card" */}
 
         <Route

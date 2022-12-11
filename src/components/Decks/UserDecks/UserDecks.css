@@ -1,3 +1,12 @@
 .user-decks {
     margin-bottom: 5%;
+    margin-top: 3%;
+}
+
+.study-button-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10%
 }

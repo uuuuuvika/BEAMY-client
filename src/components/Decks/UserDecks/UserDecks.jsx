@@ -15,17 +15,19 @@ function UserDecks({ getData, userDecks }) {
     return (
         <div className='user-decks'>
             {userDecks.map(deck => (
-                <div key={deck._id} className="cc">
-                    <motion.div
+                <div key={deck._id}>
+                    {/* <motion.div
                         className="box"
                         whileHover={{ scale: 1.1 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}>
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}> */}
                         <Link to={`/decks/${deck._id}`}>
-                            <p>{deck.flashcards.length}</p>
                             <h1 className="d">{deck.name}</h1>
                         </Link>
-                    </motion.div>
-                    <StudyBtn />
+                        <div className="study-button-line">
+                            <p>{deck.flashcards.length}</p>
+                            <StudyBtn deckId={deck._id}/>
+                        </div>
+                    {/* </motion.div> */}
                 </div>
             ))}
         </div>

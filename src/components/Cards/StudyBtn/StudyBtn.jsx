@@ -1,10 +1,10 @@
 import start from "./start-button.png";
 import { motion } from 'framer-motion';
 
-function StudyBtn() {
-
+function StudyBtn({deckId}) {
+    
     return (
-        <a href="/">
+        <a href={`/decks/${deckId}/cards`}>
             <motion.div
                 className="box"
                 whileHover={{ scale: 1.5 }}
