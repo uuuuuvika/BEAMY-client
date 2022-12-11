@@ -2,56 +2,68 @@ import "./ListOfAllCardsForSpecificDeck.css"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import AddCardButton from "../AddCardButton/AddCardButton";
-import EditDeckButton from "../../Decks/EdditDeckButton/EditDeckButton";
+import StudyBtn from "../StudyBtn/StudyBtn";
 import axios from "axios";
 import jwtDecode from 'jwt-decode';
 
 const API_URL = "http://localhost:5005";
 
 
-// here should be a button : which will allowed user !!who made a collection -> add a card -> from a form)
 function ListAllCardsForSpecificDeck() {
 
     const [allCards, setAllCards] = useState([]);
     const [allCardsLength, setAllCardsLength] = useState(0);
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
+    const [tempName, setTempName] = useState(name);
+    const [tempDescription, setTempDescription] = useState(description);
     const [createdBy, setCreatedBy] = useState("");
+    const [show, setShow] = useState(false);
     const { deckId } = useParams();
 
     const token = localStorage.getItem("authToken");
     let user = null;
-
     if (token) {
         user = jwtDecode(token);
     }
 
     function getData() {
-        //console.log(deckId);
         axios
             .get(`${API_URL}/decks/${deckId}`)
             .then((response) => {
-                //console.log(response.data);
                 setName(response.data.name);
                 setDescription(response.data.description);
+                setTempName(response.data.name)
+                setTempDescription(response.data.description);
                 setCreatedBy(response.data.createdBy);
                 setAllCards(response.data.flashcards);
                 setAllCardsLength(response.data.flashcards.length);
-
             })
             .catch((error) => console.log(error));
     };
     useEffect(() => getData(), []);
 
-    // console.log("USER:", user._id);
-    // console.log("CREATED:", createdBy)
+    function updateDeck() {
+        axios
+            .put(`${API_URL}/decks/${deckId}`, { name: tempName, description: tempDescription })
+            .then(response => console.log(response.data))
+            .catch((error) => console.log(error));
+    }
 
     return (
-        <div className="deckPage">
-            {/* <input type={"text"} value={name} /> */}
-            {/* <input type={"text"} value={description} /> */}
-            <h1>{name}</h1>
-            <h3>{description}</h3>
+        < div className="deckPage">
+            {show ? (
+                <form>
+                    <input type={"text"} value={tempName} onChange={(event) => setTempName(event.target.value)} /><br />
+                    <input type={"text"} value={tempDescription} onChange={(event) => setTempDescription(event.target.value)} />
+                    <button onClick={updateDeck}>save</button>
+                </form>)
+                :
+                <>
+                    <h1>{name}</h1>
+                    <h3>{description}</h3>
+                </>
+            }
             {allCards.map((card) => (
                 <div key={card._id}>
                     <div>
@@ -59,8 +71,8 @@ function ListAllCardsForSpecificDeck() {
                     </div>
                 </div>
             ))} totall {allCardsLength} cards
-        {user && user._id === createdBy ? <AddCardButton getData={getData} deckId={deckId} /> : null}
-        {user && user._id === createdBy ? <EditDeckButton name={name} description={description} deckId={deckId} /> : null}
+            {user && user._id === createdBy ? <AddCardButton getData={getData} deckId={deckId} /> : null}
+            {user && user._id === createdBy ? <button onClick={() => setShow(!show)}>{!show ? "click me to edit your deck" : "cancel"}</button> : null}
         </div>
     )
 }

@@ -7,10 +7,9 @@
 .text-gradient {
     font-size: 8rem;
     letter-spacing: 32px;
-    background: linear-gradient(to right, #e4d2ea 0%, #a88bce 100%);
+    background: linear-gradient(to right, #e4d2ea 0%, #3114d5 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    /* height: 90vh; */
 }
 
 .text {

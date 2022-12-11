@@ -1,28 +1,31 @@
-// import React from 'react';
+import "./UserDecks.css"
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
+import StudyBtn from "../../Cards/StudyBtn/StudyBtn";
+
 
 // make search and sort too
-function UserDecks({getData, userDecks}) {
+function UserDecks({ getData, userDecks }) {
 
     useEffect(() => {
         getData();
     }, []);
 
     return (
-        <div className='userDecks'>
+        <div className='user-decks'>
             {userDecks.map(deck => (
-                <div key={deck._id}>
+                <div key={deck._id} className="cc">
                     <motion.div
                         className="box"
                         whileHover={{ scale: 1.1 }}
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}>
                         <Link to={`/decks/${deck._id}`}>
-                            <h1>{deck.name}</h1>
-                            {/* <p>{deck.description}</p> maybe i can make it appear ON HOVER, mmm?*/}
+                            <p>{deck.flashcards.length}</p>
+                            <h1 className="d">{deck.name}</h1>
                         </Link>
                     </motion.div>
+                    <StudyBtn />
                 </div>
             ))}
         </div>

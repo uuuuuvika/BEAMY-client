@@ -20,17 +20,18 @@ function LearnCardsOneByOne() {
   if (cardsToShow.length === 0) {
     return <>Done!</>
   }
+
   return (
     <div>
       <button onClick={() => { setCardsToShow(cardsToShow.slice(1)) }}>
         next
       </button>
 
-      <div className="clay card" >
-       <p><Card 
+      <div className="clay card">
+       <div><Card 
           question={cardToShow.question}
           answer={cardToShow.answer}
-        /></p>
+        /></div>
       </div>
     </div>
   );

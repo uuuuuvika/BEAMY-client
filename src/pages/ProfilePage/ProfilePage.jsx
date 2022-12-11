@@ -19,11 +19,11 @@ function ProfilePage() {
   };
 
   return (
-    <div>
+    <>
       <UserDecks getData={getData} userDecks={userDecks} />
       <DeckForm getData={getData} />
-      <LearnCardsOneByOne />
-    </div>
+      {/* <LearnCardsOneByOne /> */}
+    </>
   );
 }
 
