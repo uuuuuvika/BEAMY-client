@@ -7,15 +7,16 @@ function DeleteDeck() {
 
     const navigate = useNavigate();
     const {deckId} = useParams();
-    console.log(deckId);
 
     function deleteElement() {
-        axios.delete(`${API_URL}/decks/${deckId}`)
-        .then(response => console.log(response.data))
-        .catch((error) => console.log(error));
-        navigate('/profile')
+        if (window.confirm('Are you sure you want to delete this deck?')) {
+                axios.delete(`${API_URL}/decks/${deckId}`)
+                .then(response => console.log(response.data))
+                .catch((error) => console.log(error));
+                navigate('/profile')
+        }
     }
-
+   
     return (
         <div>
             <button onClick={deleteElement}>DELETE</button>

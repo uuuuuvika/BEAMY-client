@@ -38,6 +38,10 @@
     box-shadow: 0 6px 10px 0 rgba(25, 24, 24, 0.2);
 }
 
+.clay:hover {
+    box-shadow: 0 6px 10px 0 rgba(25, 24, 24, 0.2);
+}
+
 .rowOfcards {
     display: flex;
     flex-wrap: wrap;

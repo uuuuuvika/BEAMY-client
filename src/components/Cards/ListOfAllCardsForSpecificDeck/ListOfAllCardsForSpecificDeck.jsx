@@ -11,9 +11,8 @@ import DeleteCardButton from "../DeleteCardButton/DeleteCardButton";
 
 const API_URL = "http://localhost:5005";
 
-
+// FIX ADOPTED BY SO I AM NOT PUSING THE SAME ID 
 function ListAllCardsForSpecificDeck() {
-
     const [allCards, setAllCards] = useState([]);
     const [allCardsLength, setAllCardsLength] = useState(0);
     const [name, setName] = useState("");
@@ -21,6 +20,9 @@ function ListAllCardsForSpecificDeck() {
     const [tempName, setTempName] = useState(name);
     const [tempDescription, setTempDescription] = useState(description);
     const [createdBy, setCreatedBy] = useState("");
+
+    const [adoptedBy, setAdoptedBy] = useState([]);
+
     const [show, setShow] = useState(false);
     const { deckId } = useParams();
 
@@ -39,12 +41,20 @@ function ListAllCardsForSpecificDeck() {
                 setTempName(response.data.name)
                 setTempDescription(response.data.description);
                 setCreatedBy(response.data.createdBy);
+
+                setAdoptedBy(response.data.adoptedBy);
+                console.log("ADOPTED BY", response.data.adoptedBy)
+
                 setAllCards(response.data.flashcards);
                 setAllCardsLength(response.data.flashcards.length);
             })
             .catch((error) => console.log(error));
     };
-    useEffect(() => getData(), []);
+    useEffect(() => {
+        if (adoptedBy.length === 0) {
+            getData();
+        }
+    }, [adoptedBy]);
 
     function updateDeck() {
         axios
@@ -74,22 +84,29 @@ function ListAllCardsForSpecificDeck() {
                 }
                 {allCards.map((card) => (
                     <div key={card._id}>
-                        <div>
-                            <p>{card.question}</p>
-                            {/* here conditionaly show DELETE CARD BUTTON */}
-                            <DeleteCardButton cardId={card._id} />
-                        </div>
+                        {show ? (
+                            <div>
+                                <p>{card.question}</p>
+                                <DeleteCardButton cardId={card._id} getData={getData} />
+                            </div>)
+                            :
+                            <>
+                                <p>{card.question}</p>
+                            </>
+                        }
                     </div>
                 ))} <i>total {allCardsLength} cards</i>
                 <div className="deck-buttons">
                     {user && user._id === createdBy ? <AddCardButton getData={getData} deckId={deckId} /> : null}
                     {user && user._id === createdBy ? <button onClick={() => setShow(!show)}>{!show ? "click me to edit your deck" : "cancel"}</button> : null}
                     {user && user._id === createdBy ? <DeleteDeck /> : null}
-                    {user && user._id !== createdBy ? <AddDeckButton /> : null}
+                    {user && user._id !== createdBy 
+                                        && !adoptedBy.includes(user._id)
+                                        ? <AddDeckButton onClick={() => setAdoptedBy(adoptedBy.concat([user._id]))} /> 
+                                        : null}
                 </div>
             </div>
-
-        </div>
+        </div >
     )
 }
 

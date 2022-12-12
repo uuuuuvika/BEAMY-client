@@ -1,21 +1,17 @@
-import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const API_URL = "http://localhost:5005";
 
 
-function DeleteCardButton({cardId}) {
+function DeleteCardButton({ cardId, getData }) {
 
-    const {deckId} = useParams();
-    const navigate = useNavigate();
-  
     function deleteElement() {
-        console.log(cardId);
-
-        axios.delete(`${API_URL}/card/${cardId}`)
-        .then(response => console.log(response.data))
-        .catch((error) => console.log(error));
-        // FIX NAVIGATION: make component rerender instead of: navigate(`/decks/${deckId}`)
+        if (window.confirm('Are you sure you want to delete this card?')) {
+            axios.delete(`${API_URL}/card/${cardId}`)
+                .then(response => console.log(response.data))
+                .catch((error) => console.log(error));
+                getData();
+        }
     }
 
     return (
