@@ -7,7 +7,7 @@ function StudyBtn({deckId}) {
         <a href={`/decks/${deckId}/cards`}>
             <motion.div
                 className="box"
-                whileHover={{ scale: 1.5 }}
+                whileHover={{ scale: 2.5 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}>
                 <img src={start} style={{ width: '30px', height: '30px' }} />
             </motion.div>

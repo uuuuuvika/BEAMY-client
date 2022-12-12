@@ -1,12 +1,15 @@
-.user-decks {
-    margin-bottom: 5%;
-    margin-top: 3%;
+.line {
+    width: 500px;
 }
 
 .study-button-line {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     gap: 10%
+}
+
+.grey {
+    color: rgb(134, 134, 134);
 }

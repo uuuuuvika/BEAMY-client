@@ -52,27 +52,32 @@ function ListAllCardsForSpecificDeck() {
 
     return (
         < div className="deckPage">
-            {show ? (
-                <form>
-                    <input type={"text"} value={tempName} onChange={(event) => setTempName(event.target.value)} /><br />
-                    <input type={"text"} value={tempDescription} onChange={(event) => setTempDescription(event.target.value)} />
-                    <button onClick={updateDeck}>save</button>
-                </form>)
-                :
-                <>
-                    <h1>{name}</h1>
-                    <h3>{description}</h3>
-                </>
-            }
-            {allCards.map((card) => (
-                <div key={card._id}>
-                    <div>
-                        <p>{card.question}</p>
+            <div className="study-btn">
+                <StudyBtn className="big" deckId={deckId} />
+            </div>
+            <div>
+                {show ? (
+                    <form>
+                        <input type={"text"} value={tempName} onChange={(event) => setTempName(event.target.value)} /><br />
+                        <input type={"text"} value={tempDescription} onChange={(event) => setTempDescription(event.target.value)} />
+                        <button onClick={updateDeck}>save</button>
+                    </form>)
+                    :
+                    <>
+                        <h1>{name}</h1>
+                        <h3>{description}</h3>
+                    </>
+                }
+                {allCards.map((card) => (
+                    <div key={card._id}>
+                        <div>
+                            <p>{card.question}</p>
+                        </div>
                     </div>
-                </div>
-            ))} totall {allCardsLength} cards
-            {user && user._id === createdBy ? <AddCardButton getData={getData} deckId={deckId} /> : null}
-            {user && user._id === createdBy ? <button onClick={() => setShow(!show)}>{!show ? "click me to edit your deck" : "cancel"}</button> : null}
+                ))} totall {allCardsLength} cards
+                {user && user._id === createdBy ? <AddCardButton getData={getData} deckId={deckId} /> : null}
+                {user && user._id === createdBy ? <button onClick={() => setShow(!show)}>{!show ? "click me to edit your deck" : "cancel"}</button> : null}
+            </div>
         </div>
     )
 }

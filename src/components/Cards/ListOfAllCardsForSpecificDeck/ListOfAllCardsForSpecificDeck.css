@@ -1,10 +1,17 @@
 .deckPage {
-    margin-left: 10%;
-    margin-right: 10%;
-    text-align: start;
+  margin-top: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: start;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.b {
-  margin-right: 20%;
-  margin-top: 20%;
+.study-btn {
+  align-self: center;
+}
+
+.big {
+  width: 20px;
 }

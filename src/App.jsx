@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import SignupPage from "./pages/SignupPage/SignupPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
-import StudyPage from "./pages/StudyPage/StydyPage";
+import StudyPage from "./pages/StudyPage/StudyPage";
 
 import Navbar from "./components/Navbar/Navbar";
 import IsPrivate from "./components/Auth/IsPrivate/IsPrivate";

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./DeckForm.css"
 // import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
@@ -33,7 +34,8 @@ function DeckForm({getData}) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="deck-form" onSubmit={handleSubmit}>
+            <h2>Create New Deck</h2>
             <label htmlFor="name">Name</label>
             <input
                 type="text"
