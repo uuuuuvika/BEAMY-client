@@ -3,13 +3,14 @@ import { useState } from "react";
 import DeckForm from "../../components/Decks/DeckForm/DeckForm";
 import UserDecks from "../../components/Decks/UserDecks/UserDecks";
 import axios from "axios";
-import authTokenHeader from "../../token.jsx";
 
+import authTokenHeader from "../../token.jsx";
 
 const API_URL = "http://localhost:5005";
 
 function ProfilePage() {
   const [userDecks, setAllDecks] = useState([]);
+
   function getData() {
     axios
       .get(`${API_URL}/decks/my`, { headers: authTokenHeader() })

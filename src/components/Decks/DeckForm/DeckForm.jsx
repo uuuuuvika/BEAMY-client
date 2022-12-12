@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./DeckForm.css"
-// import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 const API_URL = "http://localhost:5005";
@@ -10,27 +9,27 @@ function authTokenHeader() {
     return { Authorization: `Bearer ${storedToken}` }
 }
 
-function DeckForm({getData}) {
+function DeckForm({ getData }) {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [isPublic, setIsPublic] = useState(false);
-    // const navigate = useNavigate();
 
-    const handleChange = () => {
+    function handleChange() {
         setIsPublic(!isPublic);
     };
 
-    const handleSubmit = (event) => {
+    function handleSubmit(event) {
         event.preventDefault();
         const body = { name: name, description: description, isPublic: isPublic };
         axios
-            .post(`${API_URL}/decks`, body,  { headers: authTokenHeader() })
+            .post(`${API_URL}/decks`, body, { headers: authTokenHeader() })
             .then((response) => {
                 setName("");
                 setDescription("");
                 setIsPublic(false);
                 getData();
-            });
+            })
+            .catch((error) => console.log(error));
     }
 
     return (
@@ -51,11 +50,11 @@ function DeckForm({getData}) {
                 onChange={(e) => { setDescription(e.target.value) }}
             />
             <label htmlFor="isPublic">Is it a public deck?</label>
-                <input
-                    type="checkbox"
-                    checked={isPublic}
-                    onChange={handleChange}
-                />
+            <input
+                type="checkbox"
+                checked={isPublic}
+                onChange={handleChange}
+            />
             <button type="submit">Submit</button>
         </form>
     );

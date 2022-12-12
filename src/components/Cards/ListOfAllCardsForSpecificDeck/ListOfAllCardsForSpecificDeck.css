@@ -12,6 +12,10 @@
   align-self: center;
 }
 
-.big {
-  width: 20px;
+.deck-buttons {
+  margin-top: 10%;
+}
+
+.list-of-cards {
+  max-width: 500px;
 }

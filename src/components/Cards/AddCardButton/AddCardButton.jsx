@@ -12,18 +12,16 @@ function AddCardButton({ getData, deckId }) {
     const [answer, setAnswer] = useState("");
 
     function handleSubmit(event) {
-
         event.preventDefault();
-        const body = { question, answer };
-        
+        const body = { question, answer };  
         axios
             .post(`${API_URL}/decks/${deckId}/card`, body, { headers: authTokenHeader() })
             .then((response) => {
-                //what do i do with response here?
                 setQuesion("");
                 setAnswer("");
                 getData();
-            });
+            })
+            .catch((error) => console.log(error));
     }
 
     return (

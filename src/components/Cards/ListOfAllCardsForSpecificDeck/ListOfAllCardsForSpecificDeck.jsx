@@ -3,8 +3,11 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import AddCardButton from "../AddCardButton/AddCardButton";
 import StudyBtn from "../StudyBtn/StudyBtn";
+import AddDeckButton from "../../Decks/AddDeckButton/AddDeckButton";
 import axios from "axios";
 import jwtDecode from 'jwt-decode';
+import DeleteDeck from "../../Decks/DeleteButton/DeleteDeck";
+import DeleteCardButton from "../DeleteCardButton/DeleteCardButton";
 
 const API_URL = "http://localhost:5005";
 
@@ -53,9 +56,10 @@ function ListAllCardsForSpecificDeck() {
     return (
         < div className="deckPage">
             <div className="study-btn">
-                <StudyBtn className="big" deckId={deckId} />
+                <StudyBtn deckId={deckId} />
             </div>
-            <div>
+
+            <div className="list-of-cards">
                 {show ? (
                     <form>
                         <input type={"text"} value={tempName} onChange={(event) => setTempName(event.target.value)} /><br />
@@ -72,12 +76,19 @@ function ListAllCardsForSpecificDeck() {
                     <div key={card._id}>
                         <div>
                             <p>{card.question}</p>
+                            {/* here conditionaly show DELETE CARD BUTTON */}
+                            <DeleteCardButton cardId={card._id} />
                         </div>
                     </div>
-                ))} totall {allCardsLength} cards
-                {user && user._id === createdBy ? <AddCardButton getData={getData} deckId={deckId} /> : null}
-                {user && user._id === createdBy ? <button onClick={() => setShow(!show)}>{!show ? "click me to edit your deck" : "cancel"}</button> : null}
+                ))} <i>total {allCardsLength} cards</i>
+                <div className="deck-buttons">
+                    {user && user._id === createdBy ? <AddCardButton getData={getData} deckId={deckId} /> : null}
+                    {user && user._id === createdBy ? <button onClick={() => setShow(!show)}>{!show ? "click me to edit your deck" : "cancel"}</button> : null}
+                    {user && user._id === createdBy ? <DeleteDeck /> : null}
+                    {user && user._id !== createdBy ? <AddDeckButton /> : null}
+                </div>
             </div>
+
         </div>
     )
 }
