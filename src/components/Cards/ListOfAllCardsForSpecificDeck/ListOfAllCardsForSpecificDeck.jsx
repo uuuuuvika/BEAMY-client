@@ -1,18 +1,20 @@
 import "./ListOfAllCardsForSpecificDeck.css"
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
+import { AuthContext } from "../../../context/auth.context";
 import AddCardButton from "../AddCardButton/AddCardButton";
 import StudyBtn from "../StudyBtn/StudyBtn";
 import AddDeckButton from "../../Decks/AddDeckButton/AddDeckButton";
 import axios from "axios";
-import jwtDecode from 'jwt-decode';
+// import jwtDecode from 'jwt-decode';
 import DeleteDeck from "../../Decks/DeleteButton/DeleteDeck";
 import DeleteCardButton from "../DeleteCardButton/DeleteCardButton";
 import RemoveDeckButton from "../../Decks/RemoveDeckButton/RemoveDeckButton";
+import Stats from "../../Stats/Stats";
 
 const API_URL = "http://localhost:5005";
 
-// TO DO: FIX THE LOOP!
+// TO DO: check out for THE LOOP!
 function ListAllCardsForSpecificDeck() {
 
     const [allCards, setAllCards] = useState([]);
@@ -22,17 +24,11 @@ function ListAllCardsForSpecificDeck() {
     const [tempName, setTempName] = useState(name);
     const [tempDescription, setTempDescription] = useState(description);
     const [createdBy, setCreatedBy] = useState("");
-
     const [adoptedBy, setAdoptedBy] = useState([]);
-
     const [show, setShow] = useState(false);
-    const { deckId } = useParams();
-    const token = localStorage.getItem("authToken");
 
-    let user = null;
-    if (token) {
-        user = jwtDecode(token);
-    }
+    const { deckId } = useParams();
+    const {user} = useContext(AuthContext);
 
     function getData() {
         axios
@@ -44,7 +40,6 @@ function ListAllCardsForSpecificDeck() {
                 setTempDescription(response.data.description);
                 setCreatedBy(response.data.createdBy);
                 setAdoptedBy(response.data.adoptedBy);
-                //console.log("ADOPTED BY", response.data.adoptedBy)
                 setAllCards(response.data.flashcards);
                 setAllCardsLength(response.data.flashcards.length);
             })
@@ -60,7 +55,6 @@ function ListAllCardsForSpecificDeck() {
        getData();
     }, []);
 
-
     function updateDeck() {
         axios
             .put(`${API_URL}/decks/${deckId}`, { name: tempName, description: tempDescription })
@@ -73,7 +67,6 @@ function ListAllCardsForSpecificDeck() {
             <div className="study-btn">
                 <StudyBtn deckId={deckId} />
             </div>
-
             <div className="list-of-cards">
                 {show ? (
                     <form>
@@ -111,6 +104,7 @@ function ListAllCardsForSpecificDeck() {
                                         : null}
                     {user && user._id !== createdBy && adoptedBy.includes(user._id) ? <RemoveDeckButton /> : null}
                 </div>
+                <Stats />
             </div>
         </div >
     )
