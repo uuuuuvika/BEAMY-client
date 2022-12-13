@@ -1,5 +1,6 @@
 import start from "./start-button.png";
 import { motion } from 'framer-motion';
+import "./StudyBtn.css"
 
 function StudyBtn({deckId}) {
     
@@ -9,9 +10,9 @@ function StudyBtn({deckId}) {
                 className="box"
                 whileHover={{ scale: 2.5 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}>
-                <img src={start} style={{ width: '30px', height: '30px' }} />
+                <img className="start" src={start} />
             </motion.div>
         </a>
     )
 }
-export default StudyBtn
+export default StudyBtn;

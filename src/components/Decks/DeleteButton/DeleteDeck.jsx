@@ -13,7 +13,7 @@ function DeleteDeck() {
                 axios.delete(`${API_URL}/decks/${deckId}`)
                 .then(response => console.log(response.data))
                 .catch((error) => console.log(error));
-                navigate('/profile')
+                navigate('/profile');
         }
     }
    

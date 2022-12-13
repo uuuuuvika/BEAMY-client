@@ -8,11 +8,13 @@ import axios from "axios";
 import jwtDecode from 'jwt-decode';
 import DeleteDeck from "../../Decks/DeleteButton/DeleteDeck";
 import DeleteCardButton from "../DeleteCardButton/DeleteCardButton";
+import RemoveDeckButton from "../../Decks/RemoveDeckButton/RemoveDeckButton";
 
 const API_URL = "http://localhost:5005";
 
-// FIX ADOPTED BY SO I AM NOT PUSING THE SAME ID 
+// TO DO: FIX THE LOOP!
 function ListAllCardsForSpecificDeck() {
+
     const [allCards, setAllCards] = useState([]);
     const [allCardsLength, setAllCardsLength] = useState(0);
     const [name, setName] = useState("");
@@ -25,8 +27,8 @@ function ListAllCardsForSpecificDeck() {
 
     const [show, setShow] = useState(false);
     const { deckId } = useParams();
-
     const token = localStorage.getItem("authToken");
+
     let user = null;
     if (token) {
         user = jwtDecode(token);
@@ -41,20 +43,23 @@ function ListAllCardsForSpecificDeck() {
                 setTempName(response.data.name)
                 setTempDescription(response.data.description);
                 setCreatedBy(response.data.createdBy);
-
                 setAdoptedBy(response.data.adoptedBy);
-                console.log("ADOPTED BY", response.data.adoptedBy)
-
+                //console.log("ADOPTED BY", response.data.adoptedBy)
                 setAllCards(response.data.flashcards);
                 setAllCardsLength(response.data.flashcards.length);
             })
             .catch((error) => console.log(error));
     };
+    // useEffect(() => {
+    //     if (adoptedBy.length === 0) {
+    //         getData();
+    //     }
+    // }, [adoptedBy]);
+
     useEffect(() => {
-        if (adoptedBy.length === 0) {
-            getData();
-        }
-    }, [adoptedBy]);
+       getData();
+    }, []);
+
 
     function updateDeck() {
         axios
@@ -104,6 +109,7 @@ function ListAllCardsForSpecificDeck() {
                                         && !adoptedBy.includes(user._id)
                                         ? <AddDeckButton onClick={() => setAdoptedBy(adoptedBy.concat([user._id]))} /> 
                                         : null}
+                    {user && user._id !== createdBy && adoptedBy.includes(user._id) ? <RemoveDeckButton /> : null}
                 </div>
             </div>
         </div >
