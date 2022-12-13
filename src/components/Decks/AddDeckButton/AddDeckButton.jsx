@@ -8,8 +8,10 @@ const API_URL = "http://localhost:5005";
 
 
 function AddDeckButton({ onClick }) {
-    const {user} = useContext(AuthContext)
+
+    const {user} = useContext(AuthContext);
     const {deckId} = useParams();
+    
     function addDeck(event) {
         axios
             .put(`${API_URL}/decks/${deckId}/add`, user)

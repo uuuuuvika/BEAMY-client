@@ -1,13 +1,16 @@
 import "./UserDecks.css"
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import StudyBtn from "../../Cards/StudyBtn/StudyBtn";
+import { AuthContext } from "../../../context/auth.context.jsx";
+import adopted from "./adoption.png"
 
 
 // make search and sort too
 function UserDecks({ getData, userDecks }) {
 
+    const { user } = useContext(AuthContext);
     useEffect(() => {
         getData();
     }, []);
@@ -24,7 +27,10 @@ function UserDecks({ getData, userDecks }) {
                             <p>{deck.flashcards.length}</p>
                             <StudyBtn deckId={deck._id} />
                             <Link to={`/decks/${deck._id}`}>
-                                <h2>{deck.name}</h2>
+                                <div className="one-line">
+                                    <h2>{deck.name}</h2>
+                                    {user && user._id !== deck.createdBy ? <img src={adopted} style={{ width: 20, height: 20 }} /> : null}
+                                </div>
                                 <p className="grey">{deck.description}</p>
                             </Link>
                         </div>
