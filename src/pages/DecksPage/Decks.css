@@ -28,14 +28,11 @@ i {
     word-spacing: 2px;
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: 3%;
     gap: 1mm;
 }
 
 .column {
     width: 25%;
-    /* padding: 2%; */
-    /* border: 0.1mm solid black; */
 }
 .length-row {
     display: flex;

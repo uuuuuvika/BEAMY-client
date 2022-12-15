@@ -1,8 +1,7 @@
 import axios from "axios";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { AuthContext } from "../../context/auth.context.jsx";
-
+import authTokenHeader from "../../token.jsx"
 import {
     LineChart,
     Line,
@@ -15,16 +14,17 @@ import {
 
 const API_URL = "http://localhost:5005";
 
+
 function Stats() {
 
-    const { user } = useContext(AuthContext);
     const { deckId } = useParams();
     const [plotData, setPlotData] = useState(null);
+    console.log(plotData)
 
     useEffect(() => {
-        if (plotData === null){
+        if (plotData === null) {
             axios
-                .get(`${API_URL}/stats/${deckId}`, user)
+                .get(`${API_URL}/stats/${deckId}`,  { headers: authTokenHeader() })
                 .then(response => {
                     console.log(response.data);
                     setPlotData(response.data);
@@ -35,15 +35,17 @@ function Stats() {
 
     return (
         <>
+        { plotData && plotData.length > 0 
+        ?
             <LineChart
-                width={500}
-                height={300}
+                width={400}
+                height={400}
                 data={plotData || []}
                 margin={{
                     top: 10,
-                    right: 30,
-                    left: 20,
-                    bottom: 5
+                    right: 0,
+                    left: 0,
+                    bottom: 0
                 }}>
                 <XAxis dataKey="name" />
                 <YAxis />
@@ -51,9 +53,10 @@ function Stats() {
                 <Line
                     type="monotone"
                     dataKey="percentage"
-                    stroke="#8884d8"
+                    stroke="blue"
                     activeDot={{ r: 8 }} />
             </LineChart>
+        : null}
         </>
     )
 }

@@ -1,3 +1,5 @@
+import "./Search.css"
+
 function Search(props) {
     
     const handleChange = (e) => {
@@ -6,10 +8,11 @@ function Search(props) {
     };
     
     return (
-    <div>
+    <div className="search">
         <input
+            style={{width: "30%"}}
             type="search"
-            placeholder="Search here"
+            placeholder="search decks here"
             onChange={handleChange}
             value={props.searchTerm} />
     </div>)

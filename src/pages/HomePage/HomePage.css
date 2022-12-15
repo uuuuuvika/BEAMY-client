@@ -4,16 +4,14 @@
     font-family: 'Chakra Petch';
 }
 
-.text-gradient {
-    font-size: 8rem;
-    letter-spacing: 32px;
+.text {
+    padding: 0%;
+    font-size: 18vw;
+    letter-spacing: 2rem;
+    /* border: 2px solid  #625e7a; */
     background: linear-gradient(to right, #e4d2ea 0%, #3114d5 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-.text {
-    font-weight: 600;
 }
 
 .small {
@@ -50,5 +48,4 @@
     margin-left: 10%;
     margin-right: 10%;
     cursor: pointer;
-    /* height: 90vh; */
 }

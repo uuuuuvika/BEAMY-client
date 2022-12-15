@@ -1,0 +1,22 @@
+.vertical {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.btn {
+    width: fit-content;
+}
+
+.some {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* border: 1px solid tomato; */
+}
+
+/* .big {
+    width: 500px;
+    height: 600px;
+} */

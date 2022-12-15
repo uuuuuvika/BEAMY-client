@@ -21,7 +21,7 @@ function AddDeckButton({ onClick }) {
     }
     
     return (
-        <button onClick={addDeck}>add deck to your collection</button>
+        <button className="button clay card" onClick={addDeck}>add deck to your collection</button>
     )
 }
 

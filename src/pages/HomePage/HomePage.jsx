@@ -7,11 +7,7 @@ function HomePage() {
   return (
     <div>
       <motion.div
-        className="text-gradient"
-        animate={{
-          fontSize: 32,
-          color: '#FFF',
-        }}
+        animate={{margin: 0}}
         transition={{
           type: 'spring',
           stiffness: 100,

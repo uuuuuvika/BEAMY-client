@@ -1,18 +1,16 @@
 @import "https://unpkg.com/claymorphism-css/dist/clay.css";
 
 .card {
-  --clay-background: rgb(255, 255, 255);
-  --clay-border-radius: 18px;
+  background: rgb(255, 255, 255);
+  --clay-border-radius: 28px;
   --clay-shadow-inset-secondary: 0 4px 8px 0 rgba(253, 253, 253, 0.2);
   --clay-shadow-inset-primary: 0 4px 8px 0 rgba(232, 232, 232, 0.2);
-
   max-width: 300px;
   height: 400px;
-  margin: auto;
-  margin-top: 10%;
   text-align: center;
-  border: 8px solid rgb(255, 255, 0);
-
+  border: 8px solid rgb(255, 255, 255);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,3 +27,78 @@
   gap: 20%;
   text-align: start;
 }
+
+.blue {
+ background: rgb(255, 255, 255);
+  --clay-border-radius: 18px;
+  --clay-shadow-inset-secondary: 0 4px 8px 0 rgba(253, 253, 253, 0.2);
+  --clay-shadow-inset-primary: 0 4px 8px 0 rgba(232, 232, 232, 0.2);
+
+  max-width: 300px;
+  height: 400px;
+  margin: auto;
+  text-align: center;
+  border: 8px solid rgb(255, 255, 255);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-w-margin {
+ background: rgb(255, 255, 255);
+  --clay-border-radius: 18px;
+  --clay-shadow-inset-secondary: 0 4px 8px 0 rgba(253, 253, 253, 0.2);
+  --clay-shadow-inset-primary: 0 4px 8px 0 rgba(232, 232, 232, 0.2);
+
+  max-width: 300px;
+  height: 400px;
+  margin: auto;
+  margin-top: 7%;
+  text-align: center;
+  border: 8px solid rgb(255, 255, 0);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bl {
+  margin-top: 1rem;
+  background: rgb(255, 255, 255);
+  --clay-border-radius: 18px;
+  --clay-shadow-inset-secondary: 0 4px 8px 0 rgba(253, 253, 253, 0.2);
+  --clay-shadow-inset-primary: 0 4px 8px 0 rgba(232, 232, 232, 0.2);
+  border: 8px solid rgb(255, 255, 255);
+}
+
+
+.red {
+  /* background: red;
+  --clay-border-radius: 28px;
+  --clay-shadow-inset-secondary:none;
+  --clay-shadow-inset-primary: none;
+  text-align: center;
+  border: 8px solid red;
+  margin-top: 1rem;
+  margin-bottom: 1rem; */
+  background: rgb(255, 255, 0);
+  --clay-border-radius: 8px;
+  --clay-shadow-inset-secondary: 0 0 0 0 rgba(253, 253, 253, 0.2);
+  --clay-shadow-inset-primary: 0 0 0 0 rgba(232, 232, 232, 0.2);
+  max-width: 300px;
+  height: 400px;
+  text-align: center;
+  border: 8px solid rgb(255, 255, 0);;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* .red:hover {
+  scale: 1.1;
+} */

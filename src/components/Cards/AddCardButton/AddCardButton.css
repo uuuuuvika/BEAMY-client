@@ -1,0 +1,12 @@
+.add-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form {
+    margin-top: 20%;
+}
+
+.marg {
+    margin-top: 15%;
+}

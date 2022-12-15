@@ -7,13 +7,15 @@ const API_URL = "http://localhost:5005";
 
 
 function StudyPage() {
+
     const { deckId } = useParams();
     const [cards, setCards] = useState([]);
+    
     function getCards() {
         axios
           .get(`${API_URL}/decks/${deckId}/card`)
           .then((response) => {
-            console.log(response.data)
+            //console.log(response.data)
             setCards(response.data)
         })
           .catch((error) => console.log(error));

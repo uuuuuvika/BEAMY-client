@@ -18,12 +18,13 @@ function RemoveDeckButton() {
                 .then(response => console.log(response.data))
                 .catch((error) => console.log(error));
             navigate('/profile');
+            //CAN I MAKE SEVERAL AXIOS HERE?
         }
     }
 
     return (
         <div>
-            <button onClick={removeDeck}>REMOVE DECK FROM YOUR COLLECTION</button>
+            <button className="button clay bl" onClick={removeDeck}>remove deck from your collection</button>
         </div>
     )
 }

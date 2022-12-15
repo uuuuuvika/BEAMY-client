@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
-import  authTokenHeader from "../../../token";
+import "./AddCardButton.css"
+import add from "./add.png";
+import authTokenHeader from "../../../token";
 
 const API_URL = "http://localhost:5005";
 
@@ -13,7 +15,7 @@ function AddCardButton({ getData, deckId }) {
 
     function handleSubmit(event) {
         event.preventDefault();
-        const body = { question, answer };  
+        const body = { question, answer };
         axios
             .post(`${API_URL}/decks/${deckId}/card`, body, { headers: authTokenHeader() })
             .then((response) => {
@@ -25,20 +27,14 @@ function AddCardButton({ getData, deckId }) {
     }
 
     return (
-        <div>
-            <button onClick={() => setShow(!show)}>{!show ? "click me to add a new card" : "hide"}</button>
+        <div className="add-form">
+            <button className="button clay card" onClick={() => setShow(!show)}>{!show ? "add new card" : "hide"}</button>
             {show && (
-                <form onSubmit={handleSubmit}>
-                    <label>
-                        Question:
-                        <input type="text" name="question" value={question} onChange={(e) => { setQuesion(e.target.value) }} />
-                    </label>
+                <form className="form" onSubmit={handleSubmit}>
+                    <textarea type="text" name="question" placeholder="front" value={question} onChange={(e) => { setQuesion(e.target.value) }} />
                     <br />
-                    <label>
-                        Answer:
-                        <input type="text" name="answer" value={answer} onChange={(e) => { setAnswer(e.target.value) }} />
-                    </label>
-                    <button type="submit">Submit</button>
+                    <textarea type="text" name="answer"  placeholder="back" value={answer} onChange={(e) => { setAnswer(e.target.value) }} />
+                    <button className="button clay blue marg" type="submit">add card</button>
                 </form>
             )}
         </div>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import del from "../../Cards/DeleteCardButton/del.png"
 
 const API_URL = "http://localhost:5005";
 
@@ -19,7 +20,7 @@ function DeleteDeck() {
    
     return (
         <div>
-            <button onClick={deleteElement}>DELETE</button>
+            <button className="button clay card" onClick={deleteElement}>delete deck</button>
         </div>
     )
 }

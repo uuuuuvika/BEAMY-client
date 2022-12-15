@@ -3,7 +3,8 @@ import "./DeckForm.css"
 import axios from "axios";
 
 const API_URL = "http://localhost:5005";
- //TO DO: clean it!
+
+
 function authTokenHeader() {
     const storedToken = localStorage.getItem("authToken");
     return { Authorization: `Bearer ${storedToken}` }
@@ -43,7 +44,7 @@ function DeckForm({ getData }) {
                 onChange={(e) => { setName(e.target.value) }}
             />
             <label htmlFor="description">Description</label>
-            <input
+            <textarea
                 type="text"
                 name="description"
                 value={description}
@@ -55,7 +56,7 @@ function DeckForm({ getData }) {
                 checked={isPublic}
                 onChange={handleChange}
             />
-            <button type="submit">Submit</button>
+            <button className="button clay bl" type="submit">create</button>
         </form>
     );
 };

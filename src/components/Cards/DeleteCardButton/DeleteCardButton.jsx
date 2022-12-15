@@ -1,4 +1,6 @@
 import axios from "axios";
+import "./DeleteCardButton.css"
+import del from "./del.png";
 
 const API_URL = "http://localhost:5005";
 
@@ -16,7 +18,8 @@ function DeleteCardButton({ cardId, getData }) {
 
     return (
         <div>
-            <button onClick={deleteElement}>DELETE</button>
+            <img className="icon-button" src={del} style={{width: 20, height: 20}} onClick={deleteElement} />
+            <i>delete card</i>
         </div>
     )
 }

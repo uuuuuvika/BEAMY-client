@@ -7,6 +7,7 @@
     display: flex;
     align-self: center;
     --clay-border-radius: 8px;
+    border-radius: 8px;
 }
 
 a {
@@ -15,8 +16,6 @@ a {
 }
 
 a:hover {
-    /* color: #EE4E6D; */
-    /* color: #51399D; */
     color: blue;
 }
 
@@ -27,17 +26,17 @@ a:hover {
     font-weight: bold;
     letter-spacing: 1px;
     font-size: 1.5rem;
+    /* margin-bottom: 3%; */
 }
 
 .navLeft {
     display: flex;
     justify-content: space-between;
-    gap: 4mm;
+    gap: 5mm;
     margin-left: 10%;
-    margin-right: 10%;
     align-self: center;
 }
 
-.smallText{
-    font-size: 0.5em;
+.navRight {
+    margin-right: 10%;
 }

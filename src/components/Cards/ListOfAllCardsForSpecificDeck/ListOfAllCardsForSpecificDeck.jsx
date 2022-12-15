@@ -28,7 +28,7 @@ function ListAllCardsForSpecificDeck() {
     const [show, setShow] = useState(false);
 
     const { deckId } = useParams();
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
 
     function getData() {
         axios
@@ -45,14 +45,9 @@ function ListAllCardsForSpecificDeck() {
             })
             .catch((error) => console.log(error));
     };
-    // useEffect(() => {
-    //     if (adoptedBy.length === 0) {
-    //         getData();
-    //     }
-    // }, [adoptedBy]);
 
     useEffect(() => {
-       getData();
+        getData();
     }, []);
 
     function updateDeck() {
@@ -63,50 +58,63 @@ function ListAllCardsForSpecificDeck() {
     }
 
     return (
-        < div className="deckPage">
-            <div className="study-btn">
-                <StudyBtn deckId={deckId} />
-            </div>
-            <div className="list-of-cards">
-                {show ? (
-                    <form>
-                        <input type={"text"} value={tempName} onChange={(event) => setTempName(event.target.value)} /><br />
-                        <input type={"text"} value={tempDescription} onChange={(event) => setTempDescription(event.target.value)} />
-                        <button onClick={updateDeck}>save</button>
-                    </form>)
-                    :
-                    <>
-                        <h1>{name}</h1>
-                        <h3>{description}</h3>
-                    </>
-                }
-                {allCards.map((card) => (
-                    <div key={card._id}>
-                        {show ? (
-                            <div>
-                                <p>{card.question}</p>
-                                <DeleteCardButton cardId={card._id} getData={getData} />
-                            </div>)
-                            :
-                            <>
-                                <p>{card.question}</p>
-                            </>
-                        }
-                    </div>
-                ))} <i>total {allCardsLength} cards</i>
-                <div className="deck-buttons">
-                    {user && user._id === createdBy ? <AddCardButton getData={getData} deckId={deckId} /> : null}
-                    {user && user._id === createdBy ? <button onClick={() => setShow(!show)}>{!show ? "click me to edit your deck" : "cancel"}</button> : null}
-                    {user && user._id === createdBy ? <DeleteDeck /> : null}
-                    {user && user._id !== createdBy 
-                                        && !adoptedBy.includes(user._id)
-                                        ? <AddDeckButton onClick={() => setAdoptedBy(adoptedBy.concat([user._id]))} /> 
-                                        : null}
-                    {user && user._id !== createdBy && adoptedBy.includes(user._id) ? <RemoveDeckButton /> : null}
+        <div className="page-w-stats">
+            < div className="deckPage">
+                <div className="chart">
+                    {user && !show ? <Stats /> : null}
                 </div>
-                <Stats />
+                <div className="list-of-cards">
+                    {show ? (
+                        <form className="edit-name-form">
+                            <div>
+                                <textarea type={"text"} value={tempName} onChange={(event) => setTempName(event.target.value)} /><br />
+                                <textarea type={"text"} value={tempDescription} onChange={(event) => setTempDescription(event.target.value)} />
+                            </div>
+                            <button className="save button clay blue" onClick={updateDeck}>save changes</button>
+                        </form>)
+                        :
+                        <>
+                            <h1>{name}</h1>
+                            <div className="study-btn">
+                                <StudyBtn deckId={deckId} />
+                            </div>
+                            <h3>{description}</h3>
+                        </>
+                    }
+                    {allCards.map((card) => (
+                        <div key={card._id}>
+                            {show ? (
+                                <div className="card-with-del-btn">
+                                    <DeleteCardButton cardId={card._id} getData={getData} />
+                                    <p>{card.question}</p>
+                                </div>)
+                                :
+                                <>
+                                    <p>{card.question}</p>
+                                </>
+                            }
+                        </div>
+                    ))} <i>total {allCardsLength} cards</i>
+                     {user && user._id !== createdBy && adoptedBy.includes(user._id) ? <RemoveDeckButton /> : null}
+                     {user && user._id === createdBy
+                    ? <div><button className="button clay card" onClick={() => setShow(!show)}>{!show ? "edit" : "cancel"}</button></div>
+                    : null}
+                </div>
             </div>
-        </div >
+
+            <div className="deck-buttons">
+                {user && user._id === createdBy && show ? <AddCardButton getData={getData} deckId={deckId} /> : null}
+                {user && user._id === createdBy && show ? <DeleteDeck /> : null}
+                {/* {user && user._id === createdBy
+                    ? <div><button className="button clay card" onClick={() => setShow(!show)}>{!show ? "click me to edit your deck" : "cancel"}</button></div>
+                    : null} */}
+                {user && user._id !== createdBy
+                    && !adoptedBy.includes(user._id)
+                    ? <AddDeckButton onClick={() => setAdoptedBy(adoptedBy.concat([user._id]))} />
+                    : null}
+               
+            </div>
+        </div>
     )
 }
 

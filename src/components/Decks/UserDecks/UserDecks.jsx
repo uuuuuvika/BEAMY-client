@@ -25,7 +25,9 @@ function UserDecks({ getData, userDecks }) {
                         transition={{ type: "spring", stiffness: 400, damping: 10 }}>
                         <div className="study-button-line">
                             <p>{deck.flashcards.length}</p>
+
                             <StudyBtn deckId={deck._id} />
+                            
                             <Link to={`/decks/${deck._id}`}>
                                 <div className="one-line">
                                     <h2>{deck.name}</h2>

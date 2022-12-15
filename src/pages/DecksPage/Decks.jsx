@@ -51,7 +51,6 @@ function Decks() {
     return (
         <>
             <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-
             <div className="whole-greed">
                 {allDecks.filter(el => {
                     return searchTerm === "" ? true : el.name.toLowerCase().includes(searchTerm)
