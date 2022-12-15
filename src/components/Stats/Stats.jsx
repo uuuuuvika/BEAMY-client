@@ -12,7 +12,7 @@ import {
     Legend
 } from "recharts";
 
-const API_URL = "http://localhost:5005";
+const API_URL = process.env.REACT_APP_API_URL;
 
 
 function Stats() {
@@ -38,7 +38,7 @@ function Stats() {
         { plotData && plotData.length > 0 
         ?
             <LineChart
-                width={400}
+                width={550}
                 height={400}
                 data={plotData || []}
                 margin={{

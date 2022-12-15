@@ -6,15 +6,14 @@ import AddCardButton from "../AddCardButton/AddCardButton";
 import StudyBtn from "../StudyBtn/StudyBtn";
 import AddDeckButton from "../../Decks/AddDeckButton/AddDeckButton";
 import axios from "axios";
-// import jwtDecode from 'jwt-decode';
 import DeleteDeck from "../../Decks/DeleteButton/DeleteDeck";
 import DeleteCardButton from "../DeleteCardButton/DeleteCardButton";
 import RemoveDeckButton from "../../Decks/RemoveDeckButton/RemoveDeckButton";
 import Stats from "../../Stats/Stats";
 
-const API_URL = "http://localhost:5005";
+const API_URL = process.env.REACT_APP_API_URL;
 
-// TO DO: check out for THE LOOP!
+
 function ListAllCardsForSpecificDeck() {
 
     const [allCards, setAllCards] = useState([]);
@@ -77,6 +76,9 @@ function ListAllCardsForSpecificDeck() {
                             <h1>{name}</h1>
                             <div className="study-btn">
                                 <StudyBtn deckId={deckId} />
+                                {user && user._id === createdBy
+                    ? <div><button className="button clay card" onClick={() => setShow(!show)}>{!show ? "edit" : "cancel"}</button></div>
+                    : null}
                             </div>
                             <h3>{description}</h3>
                         </>
@@ -96,9 +98,7 @@ function ListAllCardsForSpecificDeck() {
                         </div>
                     ))} <i>total {allCardsLength} cards</i>
                      {user && user._id !== createdBy && adoptedBy.includes(user._id) ? <RemoveDeckButton /> : null}
-                     {user && user._id === createdBy
-                    ? <div><button className="button clay card" onClick={() => setShow(!show)}>{!show ? "edit" : "cancel"}</button></div>
-                    : null}
+                    
                 </div>
             </div>
 

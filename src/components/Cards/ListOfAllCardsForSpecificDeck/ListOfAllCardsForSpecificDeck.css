@@ -17,7 +17,7 @@
 }
 
 .list-of-cards {
-  width: 50%;
+  width: 40%;
   text-align: start;
 }
 
@@ -52,11 +52,17 @@
 }
 
 .chart {
-  width: 50%;
+  width: 60%;
   margin-top: 1rem;
   /* align-items: center; */
 }
 
 .left-text {
   text-align: left;
+}
+
+.study-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 5%
 }

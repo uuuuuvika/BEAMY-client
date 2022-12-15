@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./DeckForm.css"
 import axios from "axios";
-
-const API_URL = "http://localhost:5005";
+const API_URL = process.env.REACT_APP_API_URL
 
 
 function authTokenHeader() {
@@ -44,7 +43,7 @@ function DeckForm({ getData }) {
                 onChange={(e) => { setName(e.target.value) }}
             />
             <label htmlFor="description">Description</label>
-            <textarea
+            <input
                 type="text"
                 name="description"
                 value={description}

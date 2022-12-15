@@ -3,8 +3,7 @@ import axios from "axios";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../../../context/auth.context.jsx";
-
-const API_URL = "http://localhost:5005";
+const API_URL = process.env.REACT_APP_API_URL;
 
 
 function AddDeckButton({ onClick }) {
