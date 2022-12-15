@@ -6,7 +6,8 @@ import { AuthContext } from "../../../context/auth.context";
 import Card from "../Card/Card";
 import back from "./back.png";
 
-const API_URL = "http://localhost:5005";
+// const API_URL = "http://localhost:5005";
+const API_URL = process.env.REACT_APP_API_URL;
 //css piper    visbag
 
 function LearnCardsOneByOne({ cards }) {

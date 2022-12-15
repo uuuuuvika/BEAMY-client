@@ -4,7 +4,7 @@ import "./AddCardButton.css"
 import add from "./add.png";
 import authTokenHeader from "../../../token";
 
-const API_URL = "http://localhost:5005";
+const API_URL = process.env.REACT_APP_API_URL;
 
 
 function AddCardButton({ getData, deckId }) {

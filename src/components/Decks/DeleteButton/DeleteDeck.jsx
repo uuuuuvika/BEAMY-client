@@ -2,7 +2,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import del from "../../Cards/DeleteCardButton/del.png"
 
-const API_URL = "http://localhost:5005";
+const API_URL =  process.env.REACT_APP_API_URL;
 
 function DeleteDeck() {
 

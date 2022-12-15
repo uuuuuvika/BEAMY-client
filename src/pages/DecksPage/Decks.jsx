@@ -8,7 +8,7 @@ import { AuthContext } from "../../context/auth.context.jsx";
 import addImg from "./ad.png";
 import Search from "../../components/Search/Search";
 
-const API_URL = "http://localhost:5005";
+const API_URL = process.env.REACT_APP_API_URL;
 
 // make search and sort
 function Decks() {

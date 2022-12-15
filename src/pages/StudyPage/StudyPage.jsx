@@ -3,7 +3,7 @@ import axios from "axios";
 import LearnCardsOneByOne from "../../components/Cards/LearnCardsOneByOne/LearnCardsOneByOne";
 import { useParams } from "react-router-dom";
 
-const API_URL = "http://localhost:5005";
+const API_URL =  process.env.REACT_APP_API_URL;
 
 
 function StudyPage() {

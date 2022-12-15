@@ -2,7 +2,7 @@ import axios from "axios";
 import "./DeleteCardButton.css"
 import del from "./del.png";
 
-const API_URL = "http://localhost:5005";
+const API_URL = process.env.REACT_APP_API_URL;
 
 
 function DeleteCardButton({ cardId, getData }) {
