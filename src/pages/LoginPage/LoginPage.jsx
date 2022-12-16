@@ -44,7 +44,7 @@ function LoginPage() {
 
         <label>Password:</label>
         <input
-          type="text"
+          type="password"
           name="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
@@ -52,7 +52,7 @@ function LoginPage() {
 
         <button className="button clay card mid" type="submit">Login</button>
       </form>
-      
+
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
       <p>Don't have an account yet?</p>
