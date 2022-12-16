@@ -26,10 +26,10 @@ function Navbar() {
 						<Link to="#" onClick={logOutUser} style={{ display: "flex", alignItems: "center" }}>Log Out</Link>
 					</div>)
 					:
-					<>
-						<Link to="/signup">{" "}Sign Up{" "}</Link>
-						<Link to="/login">{" "}Login{" "}</Link>
-					</>}
+					< div style={{ display: "flex", alignItems: "center", gap: "5mm"}}>
+						<Link to="/signup">Sign Up</Link>
+						<Link to="/login">Login</Link>
+					</div>}
 			</div>
 		</nav>
 	);

@@ -35,23 +35,24 @@ function LoginPage() {
   };
 
   return (
-    <div className="LoginPage">
+    <div className="signup">
       <h1>Login</h1>
 
       <form onSubmit={handleLoginSubmit}>
         <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={(event) => setEmail(event.target.value)} />
+        <input type="text" name="email" value={email} onChange={(event) => setEmail(event.target.value)} />
 
         <label>Password:</label>
         <input
-          type="password"
+          type="text"
           name="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
 
-        <button type="submit">Login</button>
+        <button className="button clay card mid" type="submit">Login</button>
       </form>
+      
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
       <p>Don't have an account yet?</p>

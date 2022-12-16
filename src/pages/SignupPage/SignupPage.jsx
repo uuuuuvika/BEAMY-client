@@ -17,45 +17,28 @@ function SignupPage() {
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
-    // Create an object representing the request body
     const requestBody = { email, password, name };
-
-    // Send a request to the server using axios
-    /* 
-    const authToken = localStorage.getItem("authToken");
-    axios.post(
-      `${process.env.REACT_APP_SERVER_URL}/auth/signup`, 
-      requestBody, 
-      { headers: { Authorization: `Bearer ${authToken}` },
-    })
-    .then((response) => {})
-    */
-
-    // Or using a service
     authService
       .signup(requestBody)
       .then((response) => {
-        // If the POST request is successful redirect to the login page
         navigate("/login");
       })
       .catch((error) => {
-        // If the request resolves with an error, set the error message in the state
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);
       });
   };
 
   return (
-    <div className="SignupPage">
+    <div className="signup">
       <h1>Sign Up</h1>
-
       <form onSubmit={handleSignupSubmit}>
         <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+        <input type="text" name="email" value={email} onChange={handleEmail} />
 
         <label>Password:</label>
         <input
-          type="password"
+          type="text"
           name="password"
           value={password}
           onChange={handlePassword}
@@ -64,7 +47,7 @@ function SignupPage() {
         <label>Name:</label>
         <input type="text" name="name" value={name} onChange={handleName} />
 
-        <button type="submit">Sign Up</button>
+        <button className="button clay card mid" type="submit">Sign Up</button>
       </form>
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}
