@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import "./AddCardButton.css"
-import add from "./add.png";
+import "./AddCardButton.css";
 import authTokenHeader from "../../../token";
 
 const API_URL = process.env.REACT_APP_API_URL;

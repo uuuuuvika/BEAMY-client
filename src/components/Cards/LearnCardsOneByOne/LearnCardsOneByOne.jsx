@@ -4,11 +4,9 @@ import { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/auth.context";
 import Card from "../Card/Card";
-import back from "./back.png";
 
 // const API_URL = "http://localhost:5005";
 const API_URL = process.env.REACT_APP_API_URL;
-//css piper    visbag
 
 function LearnCardsOneByOne({ cards }) {
 
@@ -49,7 +47,7 @@ function LearnCardsOneByOne({ cards }) {
         <div>
             {cardsToShow.length === 0
                 ? <div className="vertical">
-                    Done!
+                    <div className="marg">Done!</div>
                     <button className="button clay card" onClick={() => { window.location.reload() }}>
                         study again
                     </button>

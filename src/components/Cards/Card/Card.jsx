@@ -3,18 +3,18 @@ import "./Card.css"
 
 function Card({ question, answer }) {
 
-  const [isFlipped, setIsFlipped] = useState(false);
+	const [isFlipped, setIsFlipped] = useState(false);
 
-  useEffect(() => {
-    setIsFlipped(false);
-  }, [question, answer])
+	useEffect(() => {
+		setIsFlipped(false);
+	}, [question, answer])
 
-  return (
-    <div onClick={() => { setIsFlipped(prevState => !prevState) }}>
-      {!isFlipped && <p className='c'>{question}</p>}
-        {isFlipped && <p className='c'>{answer}</p>}
-    </div>
-  );
+	return (
+		<div onClick={() => { setIsFlipped(prevState => !prevState) }}>
+			{!isFlipped && <p className='c'>{question}</p>}
+			{isFlipped && <p className='c'>{answer}</p>}
+		</div>
+	);
 }
 
 export default Card;

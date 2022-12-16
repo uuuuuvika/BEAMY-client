@@ -4,17 +4,16 @@ import { Navigate } from "react-router-dom";
 import Loading from "../Loading/Loading";
 
 function IsAnon({ children }) {
-  const { isLoggedIn, isLoading } = useContext(AuthContext);
 
-  if (isLoading) {
-    return <Loading />;
-  }
+	const { isLoggedIn, isLoading } = useContext(AuthContext);
 
-  if (isLoggedIn) {
-    return <Navigate to="/" />;
-  }
-
-  return children;
+	if (isLoading) {
+		return <Loading />;
+	}
+	if (isLoggedIn) {
+		return <Navigate to="/" />;
+	}
+	return children;
 }
 
 export default IsAnon;

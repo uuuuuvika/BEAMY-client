@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Chakra+Petch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Chakra+Petch:wght@400;700&display=swap');
 
 * {
-    font-family: 'Chakra Petch';
+    font-family: 'Chakra Petch', sans-serif;
 }
 
 .text {
     padding: 0%;
     font-size: 18vw;
     letter-spacing: 2rem;
-    /* border: 2px solid  #625e7a; */
     background: linear-gradient(to right, #e4d2ea 0%, #3114d5 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -19,17 +19,14 @@
     --clay-border-radius: 18px;
     --clay-shadow-inset-secondary: 0 4px 8px 0 rgba(253, 253, 253, 0.2);
     --clay-shadow-inset-primary: 0 4px 8px 0 rgba(232, 232, 232, 0.2);
-
     width: 300px;
     height: 300px;
     text-align: center;
     border: 8px solid rgb(255, 255, 0);
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* border: 2mm solid saddlebrown; */
 }
 
 .small:hover {
@@ -48,4 +45,8 @@
     margin-left: 10%;
     margin-right: 10%;
     cursor: pointer;
+}
+
+mark {
+    background-color: rgb(255, 255, 255);
 }

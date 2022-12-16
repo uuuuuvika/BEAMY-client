@@ -1,7 +1,7 @@
-
 .icon-button {
     cursor: pointer;
 }
+
 .icon-button:hover {
     filter:hue-rotate(100deg)
 }

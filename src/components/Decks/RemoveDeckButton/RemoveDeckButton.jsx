@@ -5,6 +5,7 @@ import { AuthContext } from "../../../context/auth.context.jsx";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
+
 function RemoveDeckButton() {
 
     const { user } = useContext(AuthContext)
@@ -18,7 +19,6 @@ function RemoveDeckButton() {
                 .then(response => console.log(response.data))
                 .catch((error) => console.log(error));
             navigate('/profile');
-            //CAN I MAKE SEVERAL AXIOS HERE?
         }
     }
 

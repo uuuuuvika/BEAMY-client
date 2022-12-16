@@ -1,7 +1,13 @@
-.p{
-  margin-top: 15%;
-  color: rgb(179, 179, 178);
+.footer {
+	margin-top: 20%;
+	color: rgb(179, 179, 178);
 }
+
 .p a {
-    color: rgb(229, 187, 255);
+	color: rgb(229, 187, 255);
+}
+
+.footer a {
+	font-weight: 80;
+	color: rgb(179, 179, 178);
 }

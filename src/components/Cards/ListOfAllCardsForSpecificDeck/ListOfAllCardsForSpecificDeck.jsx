@@ -68,7 +68,6 @@ function ListAllCardsForSpecificDeck() {
                         ? <div><button className="button clay card" onClick={() => setShow(!show)}>{!show ? "click me to edit your deck" : "cancel"}</button></div>
                         : null} */}
                     </div>}
-
             </div>
             <div className="list-of-cards">
                 {show ? (
@@ -114,12 +113,8 @@ function ListAllCardsForSpecificDeck() {
                     && !adoptedBy.includes(user._id)
                     ? <AddDeckButton onClick={() => setAdoptedBy(adoptedBy.concat([user._id]))} />
                     : null}
-
             </div>
         </div>
-
-
-
     )
 }
 
