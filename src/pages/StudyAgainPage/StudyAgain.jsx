@@ -26,10 +26,6 @@ function StudyAgain() {
         }
     }, [data])
 
-    // useEffect(() => {
-    //     getCards();
-    // }, []);
-
     return (
         <>
             {data && data.length > 0
