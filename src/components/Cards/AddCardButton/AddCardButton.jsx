@@ -27,15 +27,18 @@ function AddCardButton({ getData, deckId }) {
     }
 
     return (
-        <div className="add-form">
+        <div className="edit-name-form">
             <button className="button clay card" onClick={() => setShow(!show)}>{!show ? "add new card" : "hide"}</button>
-            {show && (
-                <form className="form" onSubmit={handleSubmit}>
-                    <textarea type="text" name="question" placeholder="front" value={question} onChange={(e) => { setQuesion(e.target.value) }} />
-                    <br />
-                    <textarea type="text" name="answer"  placeholder="back" value={answer} onChange={(e) => { setAnswer(e.target.value) }} />
-                    <button className="button clay blue marg" type="submit">add card</button>
+            {show && (<>
+                <form  onSubmit={handleSubmit}>
+                    <div>
+                        <textarea type="text" name="question" placeholder="front" value={question} onChange={(e) => { setQuesion(e.target.value) }} />
+                        <br />
+                        <textarea type="text" name="answer" placeholder="back" value={answer} onChange={(e) => { setAnswer(e.target.value) }} />
+                    </div>
+                    <button className="button clay card mrg" type="submit">add card</button>
                 </form>
+                    </>
             )}
         </div>
     );

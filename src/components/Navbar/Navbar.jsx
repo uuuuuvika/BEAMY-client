@@ -12,7 +12,7 @@ function Navbar() {
 			<div className="navLeft">
 				<Link to="/">Home</Link>
 				<Link to="/decks">Decks</Link>
-				{isLoggedIn && <Link to="/study-again">Study Again</Link>}
+				{isLoggedIn && <Link to="/study-again">Study</Link>}
 			</div>
 
 			<div className="navRight">
@@ -23,12 +23,12 @@ function Navbar() {
 						<Link to="/profile">
 							<img src={pic} className="gloving " style={{ width: 50, height: 50, borderRadius: 25, margin: 10 }} alt="beamy" />
 						</Link>
-						<Link to="#" onClick={logOutUser} style={{ display: "flex", alignItems: "center" }}>Logout</Link>
+						<Link to="#" onClick={logOutUser} style={{ display: "flex", alignItems: "center" }}>Log Out</Link>
 					</div>)
 					:
 					<>
-						<Link to="/signup">Sign Up</Link>
-						<Link to="/login">{" "}Login</Link>
+						<Link to="/signup">{" "}Sign Up{" "}</Link>
+						<Link to="/login">{" "}Login{" "}</Link>
 					</>}
 			</div>
 		</nav>

@@ -2,16 +2,19 @@
   margin-top: 3%;
   margin-left: 10%;
   margin-right: 10%;
-  text-align: start;
+  /* text-align: start; */
   display: flex;
-  flex-direction: row;
-  /* justify-content: space-around; */
+  /* flex-direction: row; */
+ justify-content: space-between;
+ /* flex-wrap: wrap; */
+ gap: 2%
 }
 
 .deck-buttons {
-  margin-top: 5%;
+  /* margin-top: 5%; */
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-self: center;
   gap: 3mm;
 }
@@ -34,15 +37,13 @@
 }
 
 .edit-name-form {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  width: 50%;
   gap: 3mm;
 }
 
 .save {
   width: fit-content;
-  height: fit-content;
+ margin-bottom: 6%;
 }
 
 .page-w-stats {
@@ -52,9 +53,7 @@
 }
 
 .chart {
-  width: 60%;
-  margin-top: 1rem;
-  /* align-items: center; */
+  width: 50%;
 }
 
 .left-text {
@@ -65,4 +64,10 @@
   display: flex;
   flex-direction: row;
   gap: 5%
+}
+
+.bbb {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import "./DeleteDeck.css"
 import del from "../../Cards/DeleteCardButton/del.png"
 
 const API_URL =  process.env.REACT_APP_API_URL;
@@ -20,7 +21,7 @@ function DeleteDeck() {
    
     return (
         <div>
-            <button className="button clay card" onClick={deleteElement}>delete deck</button>
+            <button className="button clay card abs" onClick={deleteElement}>delete deck</button>
         </div>
     )
 }
