@@ -10,7 +10,7 @@ import Search from "../../components/Search/Search";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-// make search and sort
+
 function Decks() {
 
     const [allDecks, setAllDecks] = useState([]);

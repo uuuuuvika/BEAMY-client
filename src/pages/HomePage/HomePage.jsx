@@ -44,9 +44,9 @@ function HomePage() {
 					<Card
 						question="How do I use BEAMY?"
 						answer={<div>
-							<p>To browse an awailible decks</p>
-							<p>simply click <mark><Link to="/decks">here</Link></mark></p>
-							<p>or register <mark><Link to="/signup">here</Link></mark> to start learning and creating</p>
+							<p>To browse awailible decks
+							simply click <mark><Link to="/decks">here </Link></mark>
+							or register <mark><Link to="/signup">here </Link></mark> to start learning and creating</p>
 						</div>}
 					/>
 				</div>

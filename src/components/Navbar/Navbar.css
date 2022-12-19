@@ -8,6 +8,7 @@
     align-self: center;
     --clay-border-radius: 8px;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 a {
@@ -19,14 +20,14 @@ a:hover {
     color: blue;
 }
 
-.navBar {
+/* .navBar {
+    width: 100%;
     margin-top: 3mm;
     display: flex;
     justify-content: space-between;
     font-weight: bold;
     letter-spacing: 1px;
     font-size: 1.5rem;
-    /* margin-bottom: 3%; */
 }
 
 .navLeft {
@@ -39,4 +40,44 @@ a:hover {
 
 .navRight {
     margin-right: 10%;
+} */
+
+ul.navBar {
+    margin-left: 10%;
+    margin-right: 10%;
+    list-style-type: none;
+    font-size: 1.5rem;
+    padding: 0;
+    overflow: hidden;
 }
+
+ul.navBar a {
+    float: left;
+}
+
+ul.navBar a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+.right {
+    float: right;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+    ul.navBar a, .right {
+        float: none;
+    }
+    ul.navBar a  {
+        text-align: justify;
+        font-size: 2rem;
+    }
+    .gloving {
+        display: none;
+    }
+    .text { display: none;;}
+  }
