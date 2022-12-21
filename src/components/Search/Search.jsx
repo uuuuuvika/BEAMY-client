@@ -10,7 +10,6 @@ function Search(props) {
     return (
     <div className="search">
         <input
-            style={{width: "30%"}}
             type="search"
             placeholder="search decks here"
             onChange={handleChange}

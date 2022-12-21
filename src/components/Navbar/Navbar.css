@@ -79,5 +79,14 @@ ul.navBar a {
     .gloving {
         display: none;
     }
-    .text { display: none;;}
-  }
+    .text { display: none;}
+    .whole-greed {
+        display:flex;
+        flex-direction: column;
+        /* width: 100%; */
+    }
+    .whole-greed .column {
+        width: 100%;
+    }
+   
+}
