@@ -37,7 +37,7 @@ function Stats() {
         <>
         { plotData && plotData.length > 0 
         ?
-            <LineChart
+            <LineChart className="chart"
                 width={550}
                 height={400}
                 data={plotData || []}

@@ -66,9 +66,7 @@ ul.navBar a {
 }
 
 @media only screen and (max-width: 600px) {
-    body {
-      background-color: lightblue;
-    }
+   
     ul.navBar a, .right {
         float: none;
     }

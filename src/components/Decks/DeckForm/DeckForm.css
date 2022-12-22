@@ -39,3 +39,19 @@ textarea[type=text] {
 .deck-form button {
     width: 100%;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .deck-form {
+        padding: 0%;
+        display: block;
+        width: 100%;
+    }
+    .line {
+        margin-top: 20%;
+    }
+	textarea[type=text] {
+        width: 200px;
+    }
+    
+}
