@@ -19,3 +19,9 @@
     margin-bottom: 5%;
     margin-top: 5%;
 }
+
+@media only screen and (max-width: 600px) {
+    .some {
+        margin-top: 10%;
+    }
+}

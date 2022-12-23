@@ -72,9 +72,10 @@ ul.navBar a {
     }
     ul.navBar a  {
         text-align: justify;
-        font-size: 2rem;
+        font-size: 1.5rem;
+        font-weight: 600 ;
     }
-    .gloving {
+    ul.navBar .hide {
         display: none;
     }
     .text { display: none;}
@@ -86,5 +87,5 @@ ul.navBar a {
     .whole-greed .column {
         width: 100%;
     }
-   
+    
 }

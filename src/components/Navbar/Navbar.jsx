@@ -15,9 +15,9 @@ function Navbar() {
 				{isLoggedIn ? (
 					<div className="right" >
 						<Link to="#" onClick={logOutUser}>Log Out</Link>
-						<Link className="hide" to="/profile">Hi, {user && user.name}!</Link>
+						<Link  to="/profile" className="hide">Hi, {user && user.name}!</Link>
 						<Link to="/profile">
-							<img src={pic} className="gloving " style={{ width: 50, height: 50, borderRadius: 25}} alt="beamy" />
+							<img src={pic} className="gloving" style={{ width: 50, height: 50, borderRadius: 25}} alt="beamy" />
 						</Link>
 					</div>)
 					:
