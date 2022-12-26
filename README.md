@@ -1,6 +1,6 @@
 # BEAMY - Flashcard Learning Web App
 
-## Welcome to BEAMY, a flashcard learning app designed to help you study and memorize information efficiently.
+## Welcome to frontend of BEAMY, a learning app designed to help you study and memorize information efficiently.
 
 ### Features
 - Create flashcards with text (and soon images)
