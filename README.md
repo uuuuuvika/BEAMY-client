@@ -8,5 +8,4 @@
 - Test your knowledge with self-graded quizzes
 - Track your progress
 <img width="1431" alt="B" src="https://user-images.githubusercontent.com/47716922/209558834-130409cb-6b82-4361-9363-72f8dc22a906.png">
-
-<img width="1431" alt="Untitled 2" src="https://user-images.githubusercontent.com/47716922/209587991-00c6f96b-77bb-43ef-8ded-61bbc294965f.png">
+<img width="1431" alt="stats" src="https://user-images.githubusercontent.com/47716922/209655450-1f45e15e-b635-4e0b-9e10-75dbe62f47b5.png">
