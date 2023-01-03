@@ -4,7 +4,7 @@
 
 ### Features
 - Create flashcards with text (and soon images)
-- Organize flashcards into decks and share them with comunity
+- Organize flashcards into decks and share them with community
 - Test your knowledge with self-graded quizzes
 - Track your progress
 <img width="1431" alt="B" src="https://user-images.githubusercontent.com/47716922/209558834-130409cb-6b82-4361-9363-72f8dc22a906.png">
