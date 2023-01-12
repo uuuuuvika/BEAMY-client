@@ -16,9 +16,17 @@ Made by uuuuuvika, Beamy is currently running <a href="https://beamy.netlify.app
 
 - Fork this repo
 - Clone this repo
+- Fork the <a href="https://github.com/uuuuuvika/BEAMY-server">backend repo</a>
+- Clone the backend repo
 
 ```shell
 $ cd BEAMY-client
+$ npm install
+$ npm start
+```
+In another terminal window:
+```shell
+$ cd BEAMY-server
 $ npm install
 $ npm start
 ```
