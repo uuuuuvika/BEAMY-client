@@ -11,3 +11,14 @@
 <img width="1431" alt="st" src="https://user-images.githubusercontent.com/47716922/209656096-72773927-aee3-4810-8b6e-c84716ca2782.png">
 
 Made by uuuuuvika, Beamy is currently running <a href="https://beamy.netlify.app/">here</a>. MongoDB-backend runs separately, check the repo <a href="https://github.com/uuuuuvika/BEAMY-server">here</a>.
+
+### Setup
+
+- Fork this repo
+- Clone this repo
+
+```shell
+$ cd BEAMY-client
+$ npm install
+$ npm start
+```
