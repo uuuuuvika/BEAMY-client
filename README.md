@@ -22,3 +22,11 @@ $ cd BEAMY-client
 $ npm install
 $ npm start
 ```
+
+- In the root folder create .env file and add the following line to it
+
+```shell
+REACT_APP_API_URL=http://localhost:5005
+```
+
+- Connect the <a href="https://github.com/uuuuuvika/BEAMY-server">backend</a>
