@@ -16,13 +16,6 @@ Made by uuuuuvika, Beamy is currently running <a href="https://beamy.netlify.app
 
 - Fork this repo
 - Clone this repo
-
-```shell
-$ cd BEAMY-client
-$ npm install
-$ npm start
-```
-
 - In the root folder create .env file and add the following line to it:
 
 ```shell
@@ -30,3 +23,11 @@ REACT_APP_API_URL=http://localhost:5005
 ```
 
 - Connect the <a href="https://github.com/uuuuuvika/BEAMY-server">backend</a>
+
+### Run
+
+```shell
+$ cd BEAMY-client
+$ npm install
+$ npm start
+```
