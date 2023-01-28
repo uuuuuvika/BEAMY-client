@@ -12,8 +12,11 @@
 
 Made by uuuuuvika, Beamy is currently running <a href="https://beamy.netlify.app/">here</a>. MongoDB-backend runs separately, check the repo <a href="https://github.com/uuuuuvika/BEAMY-server">here</a>.
 
-### Setup
+### Upcoming features
+- Ability to collaborate on a deck
+- The option to limit study sessions to a specific number of cards within a deck
 
+### Setup
 - Fork this repo
 - Clone this repo
 - In the root folder create `.env` file and add the following line to it:
