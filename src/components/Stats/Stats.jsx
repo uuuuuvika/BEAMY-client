@@ -42,7 +42,7 @@ function Stats() {
                 height={400}
                 data={plotData || []}
                 margin={{
-                    top: 10,
+                    top: 30,
                     right: 0,
                     left: 0,
                     bottom: 0

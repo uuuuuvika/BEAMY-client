@@ -17,7 +17,9 @@ function UserDecks({ getData, userDecks }) {
 
     return (
         <div className='line'>
-            {userDecks.map(deck => (
+            {userDecks.length === 0 
+            ? <div className="linee">place for your decks</div>
+            : userDecks.map(deck => (
                 <div key={deck._id}>
                     <motion.div
                         className="box"

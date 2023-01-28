@@ -8,10 +8,11 @@ function Navbar() {
 	const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 	return (
 		<ul className="navBar">
+			<div className="left" >
 				<Link className="active" to="/">Home</Link>
 				<Link to="/decks">Decks</Link>
 				{isLoggedIn && <Link to="/study-again">Study</Link>}
-		
+		</div>
 				{isLoggedIn ? (
 					<div className="right" >
 						<Link to="#" onClick={logOutUser}>Log Out</Link>

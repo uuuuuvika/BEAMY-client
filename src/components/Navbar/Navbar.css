@@ -65,27 +65,55 @@ ul.navBar a {
     float: right;
 }
 
-@media only screen and (max-width: 600px) {
-   
-    ul.navBar a, .right {
-        float: none;
+@media only screen and (max-width: 800px) {
+    .left {
+        display: flex;
+        justify-content: space-between;
     }
-    ul.navBar a  {
-        text-align: justify;
-        font-size: 1.5rem;
-        font-weight: 600 ;
+
+    .right {
+        display: flex;
+        justify-content: space-between;
     }
-    ul.navBar .hide {
-        display: none;
-    }
-    .text { display: none;}
-    .whole-greed {
-        display:flex;
+
+    ul.navBar {
+        display: flex;
         flex-direction: column;
+        justify-content: center;
+    }
+
+    ul.navBar a {
+        text-align: justify;
+        font-weight: 600;
+    }
+
+    .whole-greed {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
         /* width: 100%; */
     }
+
     .whole-greed .column {
         width: 100%;
     }
-    
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    ul.navBar a {
+        /* text-align: justify; */
+        font-weight: 600;
+    }
+
+    .whole-greed {
+        display: flex;
+        flex-direction: column;
+        /* width: 100%; */
+    }
+
+    .whole-greed .column {
+        width: 100%;
+    }
 }

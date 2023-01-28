@@ -63,10 +63,6 @@ function ListAllCardsForSpecificDeck() {
                     :
                     <div className="deck-buttons">
                         {user && user._id === createdBy && show ? <AddCardButton getData={getData} deckId={deckId} /> : null}
-
-                        {/* {user && user._id === createdBy
-                        ? <div><button className="button clay card" onClick={() => setShow(!show)}>{!show ? "click me to edit your deck" : "cancel"}</button></div>
-                        : null} */}
                     </div>}
             </div>
             <div className="list-of-cards">
