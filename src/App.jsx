@@ -9,7 +9,6 @@ import StudyAgain from "./pages/StudyAgainPage/StudyAgain";
 import Navbar from "./components/Navbar/Navbar";
 import IsPrivate from "./components/Auth/IsPrivate/IsPrivate";
 import IsAnon from "./components/Auth/IsAnon/IsAnon";
-import Footer from "./components/Footer/Footer";
 import Decks from "./pages/DecksPage/Decks";
 import ListAllCardsForSpecificDeck from "./components/Cards/ListOfAllCardsForSpecificDeck/ListOfAllCardsForSpecificDeck";
 
@@ -53,7 +52,6 @@ function App() {
         />
       
       </Routes>
-      <Footer />
     </div>
   );
 }

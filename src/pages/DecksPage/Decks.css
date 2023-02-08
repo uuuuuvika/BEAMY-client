@@ -1,7 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
 h1,
 h2,
 h3,
@@ -12,9 +8,8 @@ p {
     color: black;
 }
 
-.d:hover {
-    color: blue;
-    /* color: #51399D; */
+h2 {
+    font-weight: 700;
 }
 
 i {
@@ -31,13 +26,26 @@ i {
     gap: 1mm;
 }
 
-.column {
+.columnn {
     width: 25%;
 }
+
 .length-row {
     display: flex;
     flex-direction: row;
     justify-content: right;
     gap: 2mm;
     align-items: center;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .whole-greed {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .whole-greed .columnn {
+        width: 100%;
+    }
 }
