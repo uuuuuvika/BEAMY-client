@@ -31,7 +31,7 @@ function SignupPage() {
 
   return (
     <div className="signup">
-      <h1>Sign Up</h1>
+      <h2>Sign Up</h2>
       <form onSubmit={handleSignupSubmit}>
         <label>Email:</label>
         <input type="text" name="email" value={email} onChange={handleEmail} />

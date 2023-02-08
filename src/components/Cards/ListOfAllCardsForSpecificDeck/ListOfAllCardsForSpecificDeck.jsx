@@ -79,14 +79,14 @@ function ListAllCardsForSpecificDeck() {
                     </form>)
                     :
                     <>
-                        <h1>{name}</h1>
+                        <h2>{name}</h2>
                         <div className="study-btn">
                             <StudyBtn deckId={deckId} />
                             {user && user._id === createdBy
                                 ? <div><button className="button clay card" onClick={() => setShow(!show)}>{!show ? "edit" : "cancel"}</button></div>
                                 : null}
                         </div>
-                        <h3>{description}</h3>
+                        <p>{description}</p>
                     </>
                 }
                 {allCards.map((card) => (

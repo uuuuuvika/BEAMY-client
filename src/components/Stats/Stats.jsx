@@ -7,9 +7,7 @@ import {
     Line,
     XAxis,
     YAxis,
-    CartesianGrid,
     Tooltip,
-    Legend
 } from "recharts";
 
 const API_URL = process.env.REACT_APP_API_URL;

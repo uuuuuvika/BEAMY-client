@@ -1,7 +1,5 @@
 .search {
-    margin-right: 10%;
-    margin-left: 10%;
-    margin-bottom: 3%;
+    margin: 3%;
 }
 
 @media only screen and (max-width: 600px) {

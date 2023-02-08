@@ -56,12 +56,12 @@ function Decks() {
                     return searchTerm === "" ? true : el.name.toLowerCase().includes(searchTerm)
                 })
                     .map(deck => (
-                        <div className="column" key={deck._id}>
+                        <div className="columnn" key={deck._id}>
                             <motion.div
                                 className="box"
                                 whileHover={{ scale: 1.1 }}
                                 transition={{ type: "spring", stiffness: 400, damping: 10 }}>
-                                <Link to={`/decks/${deck._id}`} className="each-deck">
+                                <Link to={`/decks/${deck._id}`} className="each-deck nav-link">
                                     <div className="length-row">
                                         <img src={brain} style={{ width: '20px', height: '20px' }} />
                                         <p>{deck.flashcards.length}</p>
@@ -70,7 +70,7 @@ function Decks() {
                                             ? <img src={addImg} style={{ width: '20px', height: '20px', opacity: 0.2 }} />
                                             : null}
                                     </div>
-                                    <h1 className="d">{deck.name}</h1>
+                                    <h2 className="d">{deck.name}</h2>
                                     <p style={{ color: 'gray' }}>{deck.description}</p>
                                     <i style={{ color: 'gray' }}>created by {deck.userName}</i>
                                 </Link>

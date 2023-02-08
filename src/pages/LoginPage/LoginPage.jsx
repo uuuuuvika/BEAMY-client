@@ -15,12 +15,6 @@ function LoginPage() {
   function handleLoginSubmit(event) {
     event.preventDefault();
     const requestBody = { email, password };
-
-    /* 
-    axios.post(`${process.env.REACT_APP_SERVER_URL}/auth/login`)
-      .then((response) => {})
-    */
-
     authService
       .login(requestBody)
       .then((response) => {
@@ -36,7 +30,7 @@ function LoginPage() {
 
   return (
     <div className="signup">
-      <h1>Login</h1>
+      <h2>Login</h2>
 
       <form onSubmit={handleLoginSubmit}>
         <label>Email:</label>

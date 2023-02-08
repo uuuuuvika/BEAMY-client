@@ -30,7 +30,7 @@ function UserDecks({ getData, userDecks }) {
 
                             <StudyBtn deckId={deck._id} />
                             
-                            <Link to={`/decks/${deck._id}`}>
+                            <Link to={`/decks/${deck._id}`} className="nav-link">
                                 <div className="one-line">
                                     <h2>{deck.name}</h2>
                                     {user && user._id !== deck.createdBy ? <img src={adopted} style={{ width: 20, height: 20 }} /> : null}
