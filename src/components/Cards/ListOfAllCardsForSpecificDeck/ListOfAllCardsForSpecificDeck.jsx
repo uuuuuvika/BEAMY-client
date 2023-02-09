@@ -11,6 +11,7 @@ import DeleteCardButton from "../DeleteCardButton/DeleteCardButton";
 import RemoveDeckButton from "../../Decks/RemoveDeckButton/RemoveDeckButton";
 import Stats from "../../Stats/Stats";
 
+
 const API_URL = process.env.REACT_APP_API_URL;
 
 
@@ -58,13 +59,6 @@ function ListAllCardsForSpecificDeck() {
 
     return (
         < div className="deckPage">
-            <div className="chart">
-                {user && !show ? <Stats />
-                    :
-                    <div className="deck-buttons">
-                        {user && user._id === createdBy && show ? <AddCardButton getData={getData} deckId={deckId} /> : null}
-                    </div>}
-            </div>
             <div className="list-of-cards">
                 {show ? (
                     <form className="edit-name-form">
@@ -83,13 +77,13 @@ function ListAllCardsForSpecificDeck() {
                         <div className="study-btn">
                             <StudyBtn deckId={deckId} />
                             {user && user._id === createdBy
-                                ? <div><button className="button clay card" onClick={() => setShow(!show)}>{!show ? "edit" : "cancel"}</button></div>
+                                ? <div><button className="button clay card" onClick={() => setShow(!show)}>{!show ? "edit deck" : "cancel"}</button></div>
                                 : null}
                         </div>
                         <p>{description}</p>
                     </>
                 }
-                {allCards.map((card) => (
+                {allCards.map((card, i) => (
                     <div key={card._id}>
                         {show ? (
                             <div className="card-with-del-btn">
@@ -98,7 +92,7 @@ function ListAllCardsForSpecificDeck() {
                             </div>)
                             :
                             <>
-                                <p>{card.question}</p>
+                                <p>{i+1}. {card.question} /  {card.answer}</p>
                             </>
                         }
                     </div>
@@ -109,6 +103,13 @@ function ListAllCardsForSpecificDeck() {
                     && !adoptedBy.includes(user._id)
                     ? <AddDeckButton onClick={() => setAdoptedBy(adoptedBy.concat([user._id]))} />
                     : null}
+            </div>
+            <div className="chart">
+                {user && !show ? <Stats />
+                    :
+                    <div className="deck-buttons">
+                        {user && user._id === createdBy && show ? <AddCardButton getData={getData} deckId={deckId} /> : null}
+                    </div>}
             </div>
         </div>
     )

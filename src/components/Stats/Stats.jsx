@@ -1,7 +1,7 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
-import authTokenHeader from "../../token.jsx"
+import authTokenHeader from "../../token.jsx";
 import {
     LineChart,
     Line,
@@ -9,6 +9,7 @@ import {
     YAxis,
     Tooltip,
 } from "recharts";
+import Chart from 'chart.js/auto';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -17,7 +18,7 @@ function Stats() {
 
     const { deckId } = useParams();
     const [plotData, setPlotData] = useState(null);
-    console.log(plotData)
+    console.log("HERE PLOTDATA", plotData)
 
     useEffect(() => {
         if (plotData === null) {
@@ -37,10 +38,10 @@ function Stats() {
         ?
             <LineChart className="chart"
                 width={550}
-                height={400}
+                height={500}
                 data={plotData || []}
                 margin={{
-                    top: 30,
+                    top: 50,
                     right: 0,
                     left: 0,
                     bottom: 0
