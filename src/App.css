@@ -1,5 +1,14 @@
+@import "https://unpkg.com/claymorphism-css/dist/clay.css";
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Chakra+Petch:wght@400;700&display=swap');
+
+
+/* GENERAL */
 .App {
   text-align: center;
+}
+
+.nav-link:hover {
+  color: blue;
 }
 
 body {
@@ -11,6 +20,140 @@ h1 {
   font-size: 500%
 }
 
-/* h2 {
-  font-size: 300%
-} */
+
+/* NAV BAR */
+.dropdown-menu {
+  --bs-dropdown-link-active-bg: blue;
+}
+
+
+/* SUGN UP and LOG IN */
+.signup-login {
+  max-width: 300px;
+  height: 400px;
+  margin: auto;
+  margin-top: 7%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup * {
+  color: rgb(98, 84, 100);
+}
+
+.mid {
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.blue-text {
+  color: blue;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.blue-text:hover {
+  color: red;
+}
+
+
+/* ABOUT */
+.about-text {
+  max-width: 300px;
+  word-wrap: normal;
+  text-align: start;
+  margin: 10%;
+}
+
+
+/* LIST OF ALL CARDS FOR SPECIFIC DECK */
+.deckPage {
+  margin-top: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2%
+}
+
+.deck-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  gap: 3mm;
+}
+
+.list-of-cards {
+  width: 50%;
+  text-align: start;
+}
+
+.list-of-cards h1,
+h2,
+h3,
+i {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-with-del-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3mm
+}
+
+.edit-name-form {
+  width: 50%;
+  gap: 3mm;
+}
+
+.save {
+  width: fit-content;
+  margin-bottom: 6%;
+}
+
+.page-w-stats {
+  display: flex;
+  flex-direction: column;
+}
+
+.chart {
+  width: 50%;
+}
+
+.left-text {
+  text-align: left;
+}
+
+.study-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 5%
+}
+
+.save-and-delete-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.wrapping-description {
+  max-width: 300px;
+  word-wrap: normal;
+  color: darkgray;
+}
+
+@media only screen and (max-width: 600px) {
+  .list-of-cards {
+    width: 100%;
+  }
+
+  .save-and-delete-buttons {
+    display: inline;
+  }
+}

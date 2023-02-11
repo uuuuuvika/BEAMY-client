@@ -1,4 +1,3 @@
-import "./ListOfAllCardsForSpecificDeck.css"
 import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../../../context/auth.context";
@@ -62,7 +61,7 @@ function ListAllCardsForSpecificDeck() {
             <div className="list-of-cards">
                 {show ? (
                     <form className="edit-name-form">
-                        <div className="bbb">
+                        <div className="save-and-delete-buttons">
                             <>
                                 <button className="button clay card" onClick={updateDeck}>save changes</button>
                             </>
@@ -80,7 +79,7 @@ function ListAllCardsForSpecificDeck() {
                                 ? <div><button className="button clay card" onClick={() => setShow(!show)}>{!show ? "edit deck" : "cancel"}</button></div>
                                 : null}
                         </div>
-                        <p>{description}</p>
+                        <p className="wrapping-description">{description}</p>
                     </>
                 }
                 {allCards.map((card, i) => (
@@ -92,7 +91,7 @@ function ListAllCardsForSpecificDeck() {
                             </div>)
                             :
                             <>
-                                <p>{i+1}. {card.question} /  {card.answer}</p>
+                                <p><span className="blue-text">{i+1}. {card.question}</span> /  {card.answer}</p>
                             </>
                         }
                     </div>
