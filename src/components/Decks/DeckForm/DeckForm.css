@@ -39,7 +39,6 @@ textarea[type=text] {
     width: 100%;
 }
 
-
 @media only screen and (max-width: 600px) {
     .deck-form {
         padding: 0%;
