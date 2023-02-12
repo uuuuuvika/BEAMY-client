@@ -23,11 +23,19 @@ i {
     word-spacing: 2px;
     margin-left: 10%;
     margin-right: 10%;
-    gap: 1mm;
+    margin-bottom: 5%;
+    gap: 2vw;
 }
 
 .columnn {
-    width: 25%;
+    width: 31%;
+}
+
+.each-deck {
+    border-radius: 2%;
+    padding: 3%;
+    height: 35vh;
+    background-color: rgba( 156, 156, 156, 0.05);
 }
 
 .length-row {

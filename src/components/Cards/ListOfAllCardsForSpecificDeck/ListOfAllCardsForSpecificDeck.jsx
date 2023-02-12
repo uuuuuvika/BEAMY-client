@@ -91,7 +91,7 @@ function ListAllCardsForSpecificDeck() {
                             </div>)
                             :
                             <>
-                                <p><span className="blue-text">{i+1}. {card.question}</span> /  {card.answer}</p>
+                                <p>{i+1}. <span className="blue-text-not-link">{card.question}</span> /  {card.answer}</p>
                             </>
                         }
                     </div>
