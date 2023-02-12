@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { AuthContext } from "../../context/auth.context.jsx";
 import addImg from "./ad.png";
 import Search from "../../components/Search/Search";
+import Loading from "../../components/Auth/Loading/Loading";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -52,7 +53,7 @@ function Decks() {
         <>
             <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             <div className="whole-greed">
-                {allDecks.filter(el => {
+                {allDecks.length > 0 ? allDecks.filter(el => {
                     return searchTerm === "" ? true : el.name.toLowerCase().includes(searchTerm)
                 })
                     .map(deck => (
@@ -76,7 +77,7 @@ function Decks() {
                                 </Link>
                             </motion.div>
                         </div>
-                    ))}
+                    )) : <Loading />}
             </div>
         </>
     );

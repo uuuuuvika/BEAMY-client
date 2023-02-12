@@ -8,10 +8,6 @@
   font-family: 'Chakra Petch';
 }
 
-.nav-link:hover {
-  color: blue;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -21,10 +17,19 @@ h1 {
   font-size: 500%
 }
 
+.blue-text-not-link {
+  color: blue;
+  font-weight: 700;
+}
+
 
 /* NAV BAR */
 .dropdown-menu {
   --bs-dropdown-link-active-bg: blue;
+}
+
+.nav-link:hover {
+  color: blue;
 }
 
 
@@ -48,6 +53,7 @@ h1 {
   margin: auto;
   margin-top: 5%;
   margin-bottom: 5%;
+  color: rgb(0, 0, 0);
 }
 
 .blue-text {
