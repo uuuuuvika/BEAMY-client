@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import authTokenHeader from "../../token.jsx";
 import {
@@ -9,16 +9,13 @@ import {
     YAxis,
     Tooltip,
 } from "recharts";
-import Chart from 'chart.js/auto';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-
 function Stats() {
-
+    
     const { deckId } = useParams();
     const [plotData, setPlotData] = useState(null);
-    console.log("HERE PLOTDATA", plotData)
 
     useEffect(() => {
         if (plotData === null) {

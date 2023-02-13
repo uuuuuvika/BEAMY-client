@@ -10,9 +10,7 @@ import DeleteCardButton from "../DeleteCardButton/DeleteCardButton";
 import RemoveDeckButton from "../../Decks/RemoveDeckButton/RemoveDeckButton";
 import Stats from "../../Stats/Stats";
 
-
 const API_URL = process.env.REACT_APP_API_URL;
-
 
 function ListAllCardsForSpecificDeck() {
 
@@ -35,7 +33,7 @@ function ListAllCardsForSpecificDeck() {
             .then((response) => {
                 setName(response.data.name);
                 setDescription(response.data.description);
-                setTempName(response.data.name)
+                setTempName(response.data.name);
                 setTempDescription(response.data.description);
                 setCreatedBy(response.data.createdBy);
                 setAdoptedBy(response.data.adoptedBy);
@@ -49,10 +47,16 @@ function ListAllCardsForSpecificDeck() {
         getData();
     }, []);
 
+    function handleClick() {
+        updateDeck();
+    };
+
     function updateDeck() {
         axios
             .put(`${API_URL}/decks/${deckId}`, { name: tempName, description: tempDescription })
-            .then(response => console.log(response.data))
+            .then(response => {
+                console.log(response.data)
+            })
             .catch((error) => console.log(error));
     }
 
@@ -62,9 +66,7 @@ function ListAllCardsForSpecificDeck() {
                 {show ? (
                     <form className="edit-name-form">
                         <div className="save-and-delete-buttons">
-                            <>
-                                <button className="button clay card" onClick={updateDeck}>save changes</button>
-                            </>
+                            <button className="button clay card" onClick={handleClick}>save changes</button>
                             {user && user._id === createdBy && show ? <DeleteDeck /> : null}
                         </div>
                         <textarea type={"text"} value={tempName} onChange={(event) => setTempName(event.target.value)} /><br />
@@ -91,7 +93,7 @@ function ListAllCardsForSpecificDeck() {
                             </div>)
                             :
                             <>
-                                <p>{i+1}. <span className="blue-text-not-link">{card.question}</span> /  {card.answer}</p>
+                                <p>{i + 1}. <span className="blue-text-not-link">{card.question}</span> /  {card.answer}</p>
                             </>
                         }
                     </div>
