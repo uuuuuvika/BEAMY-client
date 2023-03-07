@@ -110,7 +110,6 @@ i {
 .card-with-del-btn {
   display: flex;
   flex-direction: row;
-  align-items: center;
   gap: 3mm
 }
 
