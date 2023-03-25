@@ -50,7 +50,7 @@ function DeckForm({ getData }) {
                 value={description}
                 onChange={(e) => { setDescription(e.target.value) }}
             />
-            <label htmlFor="isPublic">Is it a public deck?</label>
+            <label htmlFor="isPublic">Is it a public deck? </label>
             <input
                 type="checkbox"
                 checked={isPublic}
