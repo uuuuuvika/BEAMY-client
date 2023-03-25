@@ -1,9 +1,12 @@
 @import "https://unpkg.com/claymorphism-css/dist/clay.css";
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Chakra+Petch:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&family=Righteous&family=Urbanist&display=swap');
 
 
 /* GENERAL */
 .App {
+  margin: 0;
+  padding: 0;
   text-align: center;
   font-family: 'Chakra Petch';
 }
@@ -14,7 +17,10 @@ body {
 }
 
 h1 {
-  font-size: 500%
+  font-size: 500%;
+  background-image: linear-gradient(to right, #e4d2ea 0%, #3114d5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .blue-text-not-link {
@@ -164,5 +170,4 @@ i {
   .deckPage {
    flex-direction: column;
   }
-
 }
