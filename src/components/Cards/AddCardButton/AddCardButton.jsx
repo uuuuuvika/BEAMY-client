@@ -9,6 +9,7 @@ const API_URL = process.env.REACT_APP_API_URL;
 function AddCardButton({ getData, deckId }) {
 
     const [show, setShow] = useState(false);
+    
     const [question, setQuesion] = useState("");
     const [answer, setAnswer] = useState("");
 

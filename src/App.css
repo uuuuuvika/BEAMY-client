@@ -158,8 +158,11 @@ i {
   .list-of-cards {
     width: 100%;
   }
-
   .save-and-delete-buttons {
     display: inline;
   }
+  .deckPage {
+   flex-direction: column;
+  }
+
 }
